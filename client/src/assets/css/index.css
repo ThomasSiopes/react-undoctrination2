@@ -1,0 +1,115 @@
+body {
+    background-color: #333!important;
+    height: 100%;
+}
+
+.auttopBody {
+    background-color: #FFF!important;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    border-radius: .25rem!important;
+}
+
+.authorAttribute {
+    text-decoration: none;
+    color: #BF1919;
+    font-weight: bold;
+}
+
+.authorAttribute:hover {
+    color: #8F1313;
+}
+
+.bg-red {
+    background-color: #8F1313!important;
+}
+
+.bigQuote {
+    font-size: 28px;
+}
+
+.btn-red {
+    color: #FFF!important;
+    background-color: #BF1919!important;
+    border-color: #BF1919!important;
+}
+
+.btn-red:hover {
+    color: #FFF!important;
+    background-color: #8F1313!important;
+    border-color: #8F1313!important;
+}
+
+.breadCrumb {
+    text-decoration: none;
+}
+
+.font-Lato {
+    font-family: 'Lato', sans-serif;
+}
+
+.font-Kaisei {
+    font-family: 'Kaisei HarunoUmi', serif;
+}
+
+#footer-Icon {
+    margin-right: 0.2rem;
+}
+
+#footer-supreme {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+#footerTag {
+    max-width: 100%;
+}
+
+.mainBody {
+    min-height: 67vh;
+}
+
+#mobile-share {
+    color: #111;
+}
+
+#nav-Icon {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+.noDecor {
+    text-decoration: none;
+    color: #000;
+    list-style-type: none;
+}
+
+.redText {
+    color: #BF1919;
+}
+
+.redText:hover {
+    color: #8F1313
+}
+
+.shareButton {
+    font-size: 2.5rem;
+}
+
+#share-fb {
+    color: #3A589E;
+}
+
+#share-t {
+    color: #1C9FEF;
+}
+
+#share-r {
+    color: #FF4300;
+}
+
+.whiteText {
+    color: #FFF;
+}
