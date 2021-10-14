@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import Home from "./pages/Main";
-
+//Styles
 import 'bootstrap/dist/css/bootstrap.min.css';
+import styled, { ThemeProvider } from "styled-components";
+import { defaultTheme, newTheme, GlobalStyles } from "./assets/css/themes";
+
+//Components
+import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
+
+//Pages
+import Home from "./pages/Main";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -26,19 +34,25 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-function App() {  
+const StyledApp = styled.div``;
+
+function App() {
+  const [theme, setTheme] = useState("default");
+
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div className="container">
-          <div className="mainBody">
+        <ThemeProvider theme={theme === "default" ? defaultTheme : newTheme}>
+          <GlobalStyles/>
+          <NavBar/>
+          <StyledApp className="mainBody">
             <Switch>
               <Route exact path="/">
                 <Home/>
               </Route>
             </Switch>
-          </div>
-        </div>
+          </StyledApp>
+        </ThemeProvider>
       </Router>
     </ApolloProvider>
   );
