@@ -8,7 +8,7 @@ function Main() {
     return (
         <Container>
             <Row>
-                <Col xs={9} className="bg-dark"><AuthorCards/></Col>
+                <Col xs={9}><AuthorCards/></Col>
                 <Col xs={3}>White Space???</Col>
             </Row>            
         </Container>

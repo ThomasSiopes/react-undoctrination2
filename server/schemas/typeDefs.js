@@ -6,7 +6,11 @@ const typeDefs = gql`
         name: String
         quotes: [Quote]!
         color: String
+        darkColor: String
+        lightColor: String
         thumbnail: String
+        links: [Link]!
+        description: String
     }
 
     type Topic {
@@ -22,8 +26,14 @@ const typeDefs = gql`
         topics: [String]!
     }
 
+    type Link {
+        type: String
+        link: String
+    }
+
     type Query {
         authors: [Author]
+        authorID(authorId: ID): Author
         topics: [Topic]
         quotes: [Quote]
     }

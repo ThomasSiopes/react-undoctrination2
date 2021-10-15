@@ -1,7 +1,9 @@
 import { createGlobalStyle } from "styled-components";
 
 export const defaultTheme = {
-    color: "#fff"
+    color: "#666",
+    darkColor: "#333",
+    lightColor: "bbb"
 }
 
 export const newTheme = {
@@ -10,18 +12,43 @@ export const newTheme = {
 
 export const GlobalStyles = createGlobalStyle`
     .navbar {
-        background-color: ${(props) => props.theme.color}
+        background-color: ${(props) => props.theme.color};
     }
 
     #banner {
         width: 100%;
     }
 
-    body { 
-        background-color: #666
+    .bg-theme {
+        background-color: ${(props) => props.theme.color};
     }
 
-    .navIcon {
+    body { 
+        background-color: ${(props) => props.theme.lightColor};
+    }
 
+    .btn-block {
+        display: block;
+        width: 100%;
+    }
+
+    .btn-theme {
+        color: #fff;
+        background-color: ${(props) => props.theme.color};
+        border-color: ${(props) => props.theme.color};
+    }
+
+    .btn-theme:hover {
+        color: #fff;
+        background-color: ${(props) => props.theme.darkColor};
+        border-color: ${(props) => props.theme.darkColor};
+    }
+
+    .card-footer .btn {
+        border-color: #fff!important;
+    }
+
+    img {
+        max-width: 100%
     }
 `

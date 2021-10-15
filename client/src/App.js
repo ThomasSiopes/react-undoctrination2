@@ -14,6 +14,7 @@ import Footer from "./components/Footer";
 
 //Pages
 import Home from "./pages/Main";
+import Author from "./pages/Author";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -49,6 +50,9 @@ function App() {
             <Switch>
               <Route exact path="/">
                 <Home/>
+              </Route>
+              <Route exact path="/author/:authorId">
+                <Author/>
               </Route>
             </Switch>
           </StyledApp>

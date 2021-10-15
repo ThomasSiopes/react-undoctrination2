@@ -26,6 +26,14 @@ const authorSchema = new Schema({
         type: String,
         required: true,
     },
+    darkColor: {
+        type: String,
+        required: true,
+    },
+    lightColor: {
+        type: String,
+        required: true,
+    },
     thumbnail: {
         type: String,
         required: false,
@@ -34,7 +42,11 @@ const authorSchema = new Schema({
         {
             type: socialLinkSchema,
         }
-    ]
+    ],
+    description: {
+        type: String,
+        required: false,
+    }
 });
 
 const Author = model("Author", authorSchema);

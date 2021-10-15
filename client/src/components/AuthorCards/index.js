@@ -10,14 +10,14 @@ const SpecificCard = (author) => {
     let picPath = "/assets/images/portraits/" + author.author.thumbnail + ".png";
     
     return (
-        <Col xs={4}>
-            <Card className="text-center">
+        <Col xs={6} md={4} lg={3} className="mb-3">
+            <Card className="text-center text-white bg-theme">
                 <Card.Img src={picPath}/>
                 <Card.Body>
                     <Card.Title>{author.author.name}</Card.Title>
                 </Card.Body>
                 <Card.Footer>
-                    <Button variant={"danger"} href="#">More Details</Button>
+                    <Link to={`/author/${author.author._id}`}><Button variant={"theme"}>More Details</Button></Link>
                 </Card.Footer>
             </Card>
         </Col>
@@ -32,7 +32,7 @@ const AuthorCards = () => {
     console.log(authorList);
 
     return (
-        <Row>
+        <Row className="bg-dark">
             {authorList.map((index) => (
                 <SpecificCard author={index} key={index.name}/>
             ))}

@@ -12,7 +12,38 @@ export const QUERY_AUTHOR_ALL = gql`
                 topics
             }
             color
+            darkColor
+            lightColor
             thumbnail
+            links {
+                type
+                link
+            }
+            description
+        }
+    }
+`;
+
+export const QUERY_AUTHOR_ID = gql`
+    query getAuthorById($authorId: ID!) {
+        authorID (authorId: $authorId){
+            _id
+            name
+            quotes {
+                _id
+                quoteText
+                author
+                topics
+            }
+            color
+            darkColor
+            lightColor
+            thumbnail
+            links {
+                type
+                link
+            }
+            description
         }
     }
 `;

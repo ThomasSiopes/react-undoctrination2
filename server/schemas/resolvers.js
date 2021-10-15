@@ -6,11 +6,14 @@ const resolvers = {
         authors: async() => {
             return Author.find().populate('quotes');
         },
+        authorID: async (parent, { authorId }) => {
+            return Author.findOne({ _id: authorId }).populate('quotes');
+        },
         topics: async () => {
             return Topic.find().populate('quotes');
         },
         quotes: async () => {
-            return Quote.find()
+            return Quote.find();
         }
     }
 }
