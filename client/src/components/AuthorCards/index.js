@@ -11,7 +11,7 @@ const SpecificCard = (author) => {
     
     return (
         <Col xs={6} md={4} lg={3} className="mb-3">
-            <Card className="text-center text-white bg-theme">
+            <Card className="text-center text-white bg-theme card-main">
                 <Card.Img src={picPath}/>
                 <Card.Body>
                     <Card.Title>{author.author.name}</Card.Title>
@@ -28,11 +28,14 @@ const AuthorCards = () => {
     let {loading, data} = useQuery(QUERY_AUTHOR_ALL);
     if(loading) return <p>Loading...</p>;
 
-    const authorList = data.authors;
+    let authorList = [];
+    for(let index of data.authors){
+        if(index.FT === "n") authorList.push(index)
+    }
     console.log(authorList);
 
     return (
-        <Row className="bg-dark">
+        <Row>
             {authorList.map((index) => (
                 <SpecificCard author={index} key={index.name}/>
             ))}

@@ -15,6 +15,10 @@ export const GlobalStyles = createGlobalStyle`
         background-color: ${(props) => props.theme.color};
     }
 
+    a {
+        text-decoration: none;
+    }
+
     #banner {
         width: 100%;
     }
@@ -44,11 +48,23 @@ export const GlobalStyles = createGlobalStyle`
         border-color: ${(props) => props.theme.darkColor};
     }
 
+    .card-main {
+        min-height: 100%
+    }
+
     .card-footer .btn {
         border-color: #fff!important;
     }
 
     img {
-        max-width: 100%
+        max-width: 100%;
+    }
+
+    .mainBody {
+        min-height: 67vh;
+    }
+
+    #myInput {
+        width: 100%;
     }
 `

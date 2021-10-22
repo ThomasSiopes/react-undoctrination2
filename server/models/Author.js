@@ -16,6 +16,10 @@ const authorSchema = new Schema({
         type: String,
         required: true,
     },
+    FT: {
+        type: String,
+        required: true,
+    },
     quotes: [
         {
             type: Schema.Types.ObjectId,
@@ -24,15 +28,15 @@ const authorSchema = new Schema({
     ],
     color: {
         type: String,
-        required: true,
+        required: false,
     },
     darkColor: {
         type: String,
-        required: true,
+        required: false,
     },
     lightColor: {
         type: String,
-        required: true,
+        required: false,
     },
     thumbnail: {
         type: String,

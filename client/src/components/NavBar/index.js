@@ -10,11 +10,13 @@ const NavBar = () => {
                     <Link to={`/`} title="Home" className="navIcon"><img id="banner" src="/assets/images/thumbnails/undoctrination.png" alt="Logo"/></Link>
                 </Col>
                 <Col xs={12} lg={6} className="text-center">
-                    <Nav className="mx-auto row">
-                        <Col xs={6} lg={3} className="nav-link"><Link to={`/`}><Button variant={"theme"} className="btn-block"><strong>Freethinkers</strong></Button></Link></Col>
-                        <Col xs={6} lg={3} className="nav-link"><Link to={`/`}><Button variant={"theme"} className="btn-block"><strong>Thoughts</strong></Button></Link></Col>
-                        <Col xs={6} lg={3} className="nav-link"><Link to={`/`}><Button variant={"theme"} className="btn-block"><strong>Platforms</strong></Button></Link></Col>
-                        <Col xs={6} lg={3} className="nav-link"><Link to={`/`}><Button variant={"theme"} className="btn-block"><strong>Resources</strong></Button></Link></Col>
+                    <Nav>
+                        <Row className="mx-auto container">
+                            <Col xs={6} sm={3} className="nav-link"><Link to={`/freethinkers`}><Button variant={"theme"} className="btn-block"><strong>Freethinkers</strong></Button></Link></Col>
+                            <Col xs={6} sm={3} className="nav-link"><Link to={`/thoughts`}><Button variant={"theme"} className="btn-block"><strong>Thoughts</strong></Button></Link></Col>
+                            <Col xs={6} sm={3} className="nav-link"><Link to={`/platforms`}><Button variant={"theme"} className="btn-block"><strong>Platforms</strong></Button></Link></Col>
+                            <Col xs={6} sm={3} className="nav-link"><Link to={`/resources`}><Button variant={"theme"} className="btn-block"><strong>Resources</strong></Button></Link></Col>
+                        </Row>
                     </Nav>
                 </Col>
             </Row>

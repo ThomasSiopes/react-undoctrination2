@@ -11,10 +11,16 @@ import { defaultTheme, newTheme, GlobalStyles } from "./assets/css/themes";
 //Components
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
+import PlatformMain from "./components/Platform/main";
+import PlatformSpecific from "./components/Platform/specific";
 
 //Pages
 import Home from "./pages/Main";
 import Author from "./pages/Author";
+import Topic from "./pages/Topic";
+import TopicNavigation from "./pages/TopicNavigation";
+import Quote from "./pages/Quote";
+import Freethinkers from "./pages/Freethinkers";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -54,8 +60,27 @@ function App() {
               <Route exact path="/author/:authorId">
                 <Author/>
               </Route>
+              <Route exact path="/topic/:topicId">
+                <Topic/>
+              </Route>
+              <Route exact path="/quote/:quoteId">
+                <Quote/>
+              </Route>
+              <Route exact path="/thoughts">
+                <TopicNavigation/>
+              </Route>
+              <Route exact path="/freethinkers">
+                <Freethinkers/>
+              </Route>
+              <Route exact path="/platforms">
+                <PlatformMain/>
+              </Route>
+              <Route exact path="/platforms/:type">
+                <PlatformSpecific/>
+              </Route>
             </Switch>
           </StyledApp>
+          <Footer/>
         </ThemeProvider>
       </Router>
     </ApolloProvider>

@@ -1,15 +1,15 @@
 import React from "react";
-import { Link, } from 'react-router-dom';
 import { Container, Row, Col } from "react-bootstrap";
 
 import AuthorCards from "../components/AuthorCards";
+import MainPageSearch from "../components/MainpageSearch";
 
 function Main() {
     return (
         <Container>
             <Row>
-                <Col xs={9}><AuthorCards/></Col>
-                <Col xs={3}>White Space???</Col>
+                <Col xs={12} md={9}><AuthorCards/></Col>
+                <Col xs={12} md={3}><MainPageSearch/></Col>
             </Row>            
         </Container>
     )

@@ -1,0 +1,21 @@
+[
+    {"type": "facebook", "text": "LaTonya Shar Magee", "link": "https://www.facebook.com/sharnese30"},
+    {"type": "facebook", "text": "Mark Keith Robinson", "link": "https://www.facebook.com/mark.k.robinson.3"},
+    {"type": "facebook", "text": "LeVar Garza", "link": "https://www.facebook.com/profile.php?id=100004604224895"},
+    {"type": "facebook", "text": "Tyffani Thompson", "link": "https://www.facebook.com/tyffani.thompson.1"},
+
+    {"type": "twitter", "text": "Wayne Dupree", "link": "https://twitter.com/WayneDupreeShow"},
+    {"type": "twitter", "text": "Antoine Tucker", "link": "https://twitter.com/montaga"},
+    {"type": "twitter", "text": "David Webb", "link": "https://twitter.com/davidwebbshow"},
+    {"type": "twitter", "text": "Joy Villa", "link": "https://twitter.com/Joy_Villa"},
+
+    {"type": "instagram", "text": "Placeholder IG", "link": "placeholder"},
+    {"type": "instagram", "text": "Placeholder IG", "link": "placeholder"},
+    {"type": "instagram", "text": "Placeholder IG", "link": "placeholder"},
+    {"type": "instagram", "text": "Placeholder IG", "link": "placeholder"},
+
+    {"type": "youtube", "text": "Placeholder YT", "link": "placeholder"},
+    {"type": "youtube", "text": "Placeholder YT", "link": "placeholder"},
+    {"type": "youtube", "text": "Placeholder YT", "link": "placeholder"},
+    {"type": "youtube", "text": "Placeholder YT", "link": "placeholder"}
+]
