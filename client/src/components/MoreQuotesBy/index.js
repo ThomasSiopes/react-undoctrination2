@@ -13,10 +13,12 @@ const MoreQuotesBy = ({quote}) => {
 
     let similarQuotes = [];
     let topicCheck;
+    let quotePile = data.quotes;
 
-    for(let i = 0; (i < data.quotes.length) && (similarQuotes.length < 5); ++i) {
-        topicCheck = data.quotes[i].topics.filter(element => quote.topics.includes(element));
-        if((topicCheck !== "") && (data.quotes[i].quoteText !== quote.quoteText) && !(similarQuotes.includes(data.quotes[i]))) similarQuotes.push(data.quotes[i]);
+    for(let i = 0; (i < quotePile.length) && (similarQuotes.length < 5); ++i) {
+        let currentQuote = quotePile[Math.floor(Math.random() * (quotePile.length-1))];
+        topicCheck = currentQuote.topics.filter(element => quote.topics.includes(element));
+        if((topicCheck !== "") && (currentQuote.quoteText !== quote.quoteText) && !(similarQuotes.includes(currentQuote))) similarQuotes.push(currentQuote);
     }
 
     if(similarQuotes.length <= 0) return null;

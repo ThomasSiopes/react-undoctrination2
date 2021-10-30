@@ -34,6 +34,7 @@ export const GlobalStyles = createGlobalStyle`
     .btn-block {
         display: block;
         width: 100%;
+        min-height: 100%;
     }
 
     .btn-theme {
@@ -46,10 +47,6 @@ export const GlobalStyles = createGlobalStyle`
         color: #fff;
         background-color: ${(props) => props.theme.darkColor};
         border-color: ${(props) => props.theme.darkColor};
-    }
-
-    .card-main {
-        min-height: 100%
     }
 
     .card-footer .btn {
@@ -66,5 +63,9 @@ export const GlobalStyles = createGlobalStyle`
 
     #myInput {
         width: 100%;
+    }
+
+    .navbar, .footer {
+        width: 100%!important;
     }
 `

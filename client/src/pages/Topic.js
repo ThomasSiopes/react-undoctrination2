@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, Redirect, useParams } from "react-router-dom";
 import { useQuery} from "@apollo/client";
+import MetaTags from "react-meta-tags";
 
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 
@@ -24,6 +25,9 @@ function Topic () {
 
     return (
         <Container className="text-center text-white">
+            <MetaTags>
+                <title>Undoctrination - {data.topicID.name}</title>
+            </MetaTags>
             <h3 className="bg-theme py-3 rounded mb-3">
                 {data.topicID.name}
             </h3>

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, Redirect, useParams } from "react-router-dom";
 import { useQuery} from "@apollo/client";
+import MetaTags from "react-meta-tags";
 
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 
@@ -30,6 +31,9 @@ function Author () {
 
     return (        
         <Container className="text-white">
+            <MetaTags>
+                <title>Undoctrination - {author.name}</title>
+            </MetaTags>
             <Row>
                 {/* Author Portrait Section */}
                 <Col xs={12} lg={3} className="order-1 order-lg-2 mb-3">
@@ -37,7 +41,7 @@ function Author () {
                         <Row className="align-items-center">
                             {author.thumbnail != null &&
                                 <Col xs={5} lg={12}>
-                                    <img className="card-img" src={picPath}/>
+                                    <img className="card-img" src={picPath} alt="Portrait"/>
                                 </Col>
                             }
                             <Col xs={7} lg={12} className="text-center">
@@ -47,18 +51,20 @@ function Author () {
                                 }
                             </Col>
                         </Row>
-                        {author.links != null &&
                             <Container className="mb-2">
-                                <hr className="my-3"/>
-                                <Row className="text-center">
-                                    {author.links.map((index) => (
-                                        <Col xs={4} lg={12} className="mb-2" key={index.type}>
-                                            <Button variant={"theme"} className="btn-block" href={index.link}>{index.type}</Button>
-                                        </Col>
-                                    ))}
-                                </Row>
+                            {(author.links.length > 0) &&
+                                <div>
+                                    <hr className="my-3"/>
+                                    <Row className="text-center">
+                                        {author.links.map((index) => (
+                                            <Col xs={4} lg={12} className="mb-2" key={index.type}>
+                                                <Button variant={"theme"} className="btn-block" href={index.link}>{index.type}</Button>
+                                            </Col>
+                                        ))}
+                                    </Row>
+                                </div>
+                            }
                             </Container>
-                        }
                     </Card>
                 </Col>
 
@@ -71,7 +77,7 @@ function Author () {
                         {author.quotes.map((index) => (
                             <Col xs={12} className="mb-3" key={index.quoteText}>
                                 <Card className="bg-theme">
-                                    <Link to={`/quote/${index._id}`}><Button variant={"theme"}>
+                                    <Link to={`/quote/${index._id}`}><Button variant={"theme"} className="btn-block">
                                         <Container>
                                             <Card.Body>
                                                 "{index.quoteText}"

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useQuery } from "@apollo/client";
+import MetaTags from "react-meta-tags";
 
 import { Container, Row, Col, Button, Card } from "react-bootstrap";
 
@@ -13,8 +14,10 @@ function Freethinkers () {
 
     let authorList = [];
     for(let index of data.authors){
-        if(index.FT === "y") authorList.push(index)
+        if(index.FT !== "n") authorList.push(index)
     }
+
+    authorList = authorList.sort((a, b) => a.name.localeCompare(b.name));
 
     const searchFunction = () => {
         let input, filter, group, elements, body, textValue;
@@ -34,6 +37,9 @@ function Freethinkers () {
 
     return (
         <Container className="text-center text-white">
+            <MetaTags>
+                <title>Undoctrination - Freethinkers</title>
+            </MetaTags>
             <h3 className="bg-theme py-3 rounded mb-3">Freethinkers</h3>
             <input type="text" id="myInput" onKeyUp={searchFunction} placeholder="Search for thought names..." className="mb-3"/>
             <Row id="myGroup">

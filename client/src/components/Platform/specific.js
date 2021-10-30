@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
+import MetaTags from "react-meta-tags";
 
 import { Container, Button, Row, Col } from "react-bootstrap";
 
@@ -20,22 +21,25 @@ const PlatformSpecific = () => {
         if(index.type === type) linkList.push(index);
     }
 
-    console.log("final list: " + linkList)
+    let typeName = type.charAt(0).toUpperCase() + type.slice(1);
     
     return (
         <Container className="text-center text-white">
-            <h3 className="bg-theme rounded py-3 mb-3">{type.charAt(0).toUpperCase() + type.slice(1)}</h3>
+            <MetaTags>
+                <title>Undoctrination - Platforms - {typeName}</title>
+            </MetaTags>
+            <h3 className="bg-theme rounded py-3 mb-3">{typeName}</h3>
             <Row>
                 <Col xs={1}>
                     <Link to={`/platforms`} className="text-white"><Button variant={"theme"} className="mb-3">Back</Button></Link>
                 </Col>
-                <Col xs={11}>
+                <Col>
                     <hr className="text-black"></hr>
                 </Col>
             </Row>
             <Row>
                 {linkList.map((index) => (
-                    <Col xs={6} md={3} className="mb-2">
+                    <Col xs={6} md={3} className="mb-2" key={index.text}>
                         <Button variant={"theme"} className="btn-block" href={index.link}>{index.text}</Button>
                     </Col>
                 ))}

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useQuery } from "@apollo/client";
+import MetaTags from "react-meta-tags";
 
 import { Container, Row, Col, Button, Card } from "react-bootstrap";
 
@@ -32,6 +33,9 @@ function TopicNavigation () {
 
     return (
         <Container className="text-center text-white">
+            <MetaTags>
+                <title>Undoctrination - Thoughts</title>
+            </MetaTags>
             <h3 className="bg-theme py-3 rounded mb-3">Thoughts</h3>
             <input type="text" id="myInput" onKeyUp={searchFunction} placeholder="Search for thought names..." className="mb-3"/>
             <Row id="myGroup">

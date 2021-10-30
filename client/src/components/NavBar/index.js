@@ -6,10 +6,10 @@ const NavBar = () => {
     return (
         <Navbar className="mb-3" expand="sm">
             <Row className="align-items-end">
-                <Col xs={12} lg={6}>
+                <Col xs={12} lg={5}>
                     <Link to={`/`} title="Home" className="navIcon"><img id="banner" src="/assets/images/thumbnails/undoctrination.png" alt="Logo"/></Link>
                 </Col>
-                <Col xs={12} lg={6} className="text-center">
+                <Col xs={12} lg={7} className="text-center">
                     <Nav>
                         <Row className="mx-auto container">
                             <Col xs={6} sm={3} className="nav-link"><Link to={`/freethinkers`}><Button variant={"theme"} className="btn-block"><strong>Freethinkers</strong></Button></Link></Col>

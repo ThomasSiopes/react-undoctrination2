@@ -19,7 +19,9 @@ const AuthorPortraitButton = ({name}) => {
     return (
         <Card bg={"theme"} className="mb-3">
             <Card.Header>Author:</Card.Header>
-            <Card.Img src={picPath}/>
+            { author.thumbnail &&
+                <Card.Img src={picPath}/>
+            }
             <Button variant={"theme"}>
                 <Link to={`/author/${author._id}`} className="text-white">
                     <Card.Body>

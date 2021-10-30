@@ -11,6 +11,7 @@ import { defaultTheme, newTheme, GlobalStyles } from "./assets/css/themes";
 //Components
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
+import ErrorPage from "./components/ErrorPage";
 import PlatformMain from "./components/Platform/main";
 import PlatformSpecific from "./components/Platform/specific";
 
@@ -44,7 +45,7 @@ const client = new ApolloClient({
 const StyledApp = styled.div``;
 
 function App() {
-  const [theme, setTheme] = useState("default");
+  const [theme] = useState("default");
 
   return (
     <ApolloProvider client={client}>
@@ -78,6 +79,7 @@ function App() {
               <Route exact path="/platforms/:type">
                 <PlatformSpecific/>
               </Route>
+              <Route component={ErrorPage}/>
             </Switch>
           </StyledApp>
           <Footer/>

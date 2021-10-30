@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 
-import { Container, Row, Col, Card } from "react-bootstrap";
+import { Row, Col, Card } from "react-bootstrap";
 
 import { QUERY_AUTHOR_ALL } from "../../utils/queries";
 
@@ -14,7 +14,9 @@ const MainPageSearch = () => {
     for(let index of data.authors){
         if(index.FT === "n") authorList.push(index)
     }
-    console.log(authorList);
+    // console.log(authorList);
+
+    authorList = authorList.sort((a, b) => a.name.localeCompare(b.name));
 
     const searchFunction = () => {
         let input, filter, group, elements, a, txtValue;
@@ -38,7 +40,7 @@ const MainPageSearch = () => {
             <input type="text" id="myInput" onKeyUp={searchFunction} placeholder="Search for an author..." className="mb-1"/>
             <Row id="myGroup" className="text-center">
                 {authorList.map((index) => (
-                    <Col xs={12} className="my-1">
+                    <Col xs={12} key= {"search: " + index.name} className="my-1">
                         <Link to={`/author/${index._id}`}>{index.name}</Link>
                     </Col>
                 ))}

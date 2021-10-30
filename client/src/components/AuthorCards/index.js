@@ -13,12 +13,11 @@ const SpecificCard = (author) => {
         <Col xs={6} md={4} lg={3} className="mb-3">
             <Card className="text-center text-white bg-theme card-main">
                 <Card.Img src={picPath}/>
-                <Card.Body>
-                    <Card.Title>{author.author.name}</Card.Title>
-                </Card.Body>
-                <Card.Footer>
-                    <Link to={`/author/${author.author._id}`}><Button variant={"theme"}>More Details</Button></Link>
-                </Card.Footer>
+                <Button variant={"theme"} className="btn-block py-3">
+                    <Link to={`/author/${author.author._id}`} className="text-white">
+                        <strong>{author.author.name}</strong>
+                    </Link>
+                </Button>
             </Card>
         </Col>
     )
@@ -30,9 +29,11 @@ const AuthorCards = () => {
 
     let authorList = [];
     for(let index of data.authors){
-        if(index.FT === "n") authorList.push(index)
+        if(index.FT !== "y") authorList.push(index)
     }
-    console.log(authorList);
+    // console.log(authorList);
+
+    authorList = authorList.sort((a, b) => a.name.localeCompare(b.name));
 
     return (
         <Row>
