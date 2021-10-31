@@ -28,7 +28,7 @@ const PlatformSpecific = () => {
             <MetaTags>
                 <title>Undoctrination - Platforms - {typeName}</title>
             </MetaTags>
-            <h3 className="bg-theme rounded py-3 mb-3">{typeName}</h3>
+            <h3 className="bg-theme rounded py-3 mb-3">Recommended {typeName} Pages</h3>
             <Row>
                 <Col xs={1}>
                     <Link to={`/platforms`} className="text-white"><Button variant={"theme"} className="mb-3">Back</Button></Link>

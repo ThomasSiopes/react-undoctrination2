@@ -58,7 +58,7 @@ function Author () {
                                     <Row className="text-center">
                                         {author.links.map((index) => (
                                             <Col xs={4} lg={12} className="mb-2" key={index.type}>
-                                                <Button variant={"theme"} className="btn-block" href={index.link}>{index.type}</Button>
+                                                <Button variant={"theme"} className="btn-block smaller-text" href={index.link}>{index.type}</Button>
                                             </Col>
                                         ))}
                                     </Row>
@@ -71,15 +71,15 @@ function Author () {
                 {/* Quote Section */}
                 <Col xs={12} lg={9} className="order-2 order-lg-1">
                     <Row className="text-center">
-                        <Col xs={12} className="mb-3 bg-theme">
-                            Quotes by {author.name}
+                        <Col xs={12}>
+                            <p className="bg-theme rounded py-1"><strong>Quotes by {author.name}</strong></p>
                         </Col>
                         {author.quotes.map((index) => (
                             <Col xs={12} className="mb-3" key={index.quoteText}>
                                 <Card className="bg-theme">
                                     <Link to={`/quote/${index._id}`}><Button variant={"theme"} className="btn-block">
                                         <Container>
-                                            <Card.Body>
+                                            <Card.Body className="quote-preview">
                                                 "{index.quoteText}"
                                             </Card.Body>
                                         </Container>

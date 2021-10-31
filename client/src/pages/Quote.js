@@ -35,7 +35,7 @@ function Quote () {
             </MetaTags>
             <Card className="bg-theme mb-3">
                 <Card.Body>
-                    <Card.Text className="display-6 container">"{quote.quoteText}"</Card.Text>
+                    <Card.Text className="display-6 container"><span className="quote-body"><i>"{quote.quoteText}"</i></span> - {quote.author}</Card.Text>
                 </Card.Body>
                 <Card.Footer>
                     <Row>

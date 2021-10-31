@@ -28,7 +28,7 @@ const MoreQuotesBy = ({quote}) => {
             <Card.Header>Similar Quotes</Card.Header>
             <Card.Body>
                 {similarQuotes.map((index) => (
-                    <Link to={`/quote/${index._id}`} key={index.quoteText}><Button variant={"theme"} className="mb-3">"{index.quoteText}" - {index.author}</Button></Link>
+                    <Link to={`/quote/${index._id}`} key={index.quoteText}><Button variant={"theme"} className="mb-3"><i>"{index.quoteText}"</i> - {index.author}</Button></Link>
                 ))}
             </Card.Body>
         </Card>

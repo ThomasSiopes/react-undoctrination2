@@ -12,12 +12,10 @@ const SpecificCard = (author) => {
     return (
         <Col xs={6} md={4} lg={3} className="mb-3">
             <Card className="text-center text-white bg-theme card-main">
-                <Card.Img src={picPath}/>
-                <Button variant={"theme"} className="btn-block py-3">
-                    <Link to={`/author/${author.author._id}`} className="text-white">
-                        <strong>{author.author.name}</strong>
-                    </Link>
-                </Button>
+                <Link to={`/author/${author.author._id}`}><Card.Img src={picPath}/></Link>
+                <Link to={`/author/${author.author._id}`} className="text-white btn btn-theme btn-block py-3">
+                    <strong>{author.author.name}</strong>
+                </Link>
             </Card>
         </Col>
     )
@@ -33,7 +31,7 @@ const AuthorCards = () => {
     }
     // console.log(authorList);
 
-    authorList = authorList.sort((a, b) => a.name.localeCompare(b.name));
+    authorList = authorList.sort((a, b) => (b.quotes.length) - (a.quotes.length));
 
     return (
         <Row>

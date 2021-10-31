@@ -53,6 +53,10 @@ export const GlobalStyles = createGlobalStyle`
         border-color: #fff!important;
     }
 
+    .card-title {
+        font-weight: 600;
+    }
+
     img {
         max-width: 100%;
     }
@@ -67,5 +71,14 @@ export const GlobalStyles = createGlobalStyle`
 
     .navbar, .footer {
         width: 100%!important;
+    }
+
+    .quote-body, .quote-preview {
+        font-weight: 500;
+    }
+
+    .smaller-text {
+        font-size: 14px;
+        font-weight: 650;
     }
 `
