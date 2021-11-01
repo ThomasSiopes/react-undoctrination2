@@ -4,6 +4,7 @@ import { useQuery} from "@apollo/client";
 import MetaTags from "react-meta-tags";
 
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import { FaFacebook, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
 
 import TopicButton from "../components/TopicButton";
 
@@ -58,7 +59,21 @@ function Author () {
                                     <Row className="text-center">
                                         {author.links.map((index) => (
                                             <Col xs={4} lg={12} className="mb-2" key={index.type}>
-                                                <Button variant={"theme"} className="btn-block smaller-text" href={index.link}>{index.type}</Button>
+                                                {(index.type === "Facebook" || index.type === "FaceBook") &&
+                                                    <Button variant={"theme"} className="btn-block" href={index.link}><FaFacebook/></Button>    
+                                                }
+                                                {(index.type === "Twitter") &&
+                                                    <Button variant={"theme"} className="btn-block" href={index.link}><FaTwitter/></Button>
+                                                }
+                                                {(index.type === "Instagram" || index.type === "InstaGram") &&
+                                                    <Button variant={"theme"} className="btn-block" href={index.link}><FaInstagram/></Button>
+                                                }
+                                                {(index.type === "Youtube" || index.type === "YouTube") &&
+                                                    <Button variant={"theme"} className="btn-block" href={index.link}><FaYoutube/></Button>
+                                                }
+                                                {(index.type !== "Facebook" && index.type !== "FaceBook" && index.type !== "Twitter" && index.type !== "Instagram" && index.type !== "InstaGram" && index.type !== "Youtube" && index.type !== "YouTube") &&
+                                                    <Button variant={"theme"} className="btn-block smaller-text" href={index.link}>{index.type}</Button>
+                                                }
                                             </Col>
                                         ))}
                                     </Row>
