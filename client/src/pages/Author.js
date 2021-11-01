@@ -59,6 +59,9 @@ function Author () {
                                     <Row className="text-center">
                                         {author.links.map((index) => (
                                             <Col xs={4} lg={12} className="mb-2" key={index.type}>
+                                                {(index.type === "Website" || index.type === "Site" || index.type === "WebSite") &&
+                                                    <Button variant={"theme"} className="btn-block" href={index.link}>Site</Button>    
+                                                }
                                                 {(index.type === "Facebook" || index.type === "FaceBook") &&
                                                     <Button variant={"theme"} className="btn-block" href={index.link}><FaFacebook/></Button>    
                                                 }
@@ -71,7 +74,7 @@ function Author () {
                                                 {(index.type === "Youtube" || index.type === "YouTube") &&
                                                     <Button variant={"theme"} className="btn-block" href={index.link}><FaYoutube/></Button>
                                                 }
-                                                {(index.type !== "Facebook" && index.type !== "FaceBook" && index.type !== "Twitter" && index.type !== "Instagram" && index.type !== "InstaGram" && index.type !== "Youtube" && index.type !== "YouTube") &&
+                                                {(index.type !== "Website" && index.type !== "Site" && index.type !== "WebSite" && index.type !== "Facebook" && index.type !== "FaceBook" && index.type !== "Twitter" && index.type !== "Instagram" && index.type !== "InstaGram" && index.type !== "Youtube" && index.type !== "YouTube") &&
                                                     <Button variant={"theme"} className="btn-block smaller-text" href={index.link}>{index.type}</Button>
                                                 }
                                             </Col>
@@ -99,13 +102,13 @@ function Author () {
                                             </Card.Body>
                                         </Container>
                                     </Button></Link>
-                                    {(index.topics.length > 0) &&
+                                    {/* {(index.topics.length > 0) &&
                                         <Card.Footer>
                                             {index.topics.map((topic) => (
                                                 <TopicButton key={index+topic} name={topic}/>
                                             ))}
                                         </Card.Footer>
-                                    }
+                                    } */}
                                 </Card>
                             </Col>
                         ))}

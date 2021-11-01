@@ -40,15 +40,15 @@ function Quote () {
                 <Card.Footer>
                     <Row>
                         <Col/>
-                        {quote.topics.length !== 0 && 
-                        <Col xs={12} md={4} lg={3}>
-                            <p>Topics:
-                                {quote.topics.map((index) => (
-                                    <span key={index} className="ms-1"><TopicButton name={index}/></span>
-                                ))}
-                            </p>
-                        </Col>
-                        }
+                        {/* {quote.topics.length !== 0 && 
+                            <Col xs={12} md={4} lg={3}>
+                                <p>Topics:
+                                    {quote.topics.map((index) => (
+                                        <span key={index} className="ms-1"><TopicButton name={index}/></span>
+                                    ))}
+                                </p>
+                            </Col>
+                        } */}
                         <Col xs={12} md={4} lg={3}>
                             <p>Share: 
                                 <a href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`}><Button className="ms-1" variant={"theme"}><FaFacebookF/></Button></a>
