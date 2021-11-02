@@ -73,6 +73,10 @@ export const GlobalStyles = createGlobalStyle`
         width: 100%!important;
     }
 
+    #NavSearch {
+        width: 100%;
+    }
+
     .quote-body, .quote-preview {
         font-weight: 500;
     }
@@ -80,5 +84,9 @@ export const GlobalStyles = createGlobalStyle`
     .smaller-text {
         font-size: 14px;
         font-weight: 650;
+    }
+
+    #searchTerm {
+        width: 70%;
     }
 `

@@ -22,6 +22,7 @@ import Topic from "./pages/Topic";
 import TopicNavigation from "./pages/TopicNavigation";
 import Quote from "./pages/Quote";
 import Freethinkers from "./pages/Freethinkers";
+import SearchResult from "./pages/SearchResult";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -78,6 +79,9 @@ function App() {
               </Route>
               <Route exact path="/platforms/:type">
                 <PlatformSpecific/>
+              </Route>
+              <Route exact path="/search/:query">
+                <SearchResult/>
               </Route>
               <Route component={ErrorPage}/>
             </Switch>
