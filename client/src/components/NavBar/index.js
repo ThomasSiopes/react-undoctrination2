@@ -39,10 +39,8 @@ class NavBar extends React.Component {
                     <Col xs={12} lg={6} className="text-center">
                         <Nav>     
                             <Row className="mx-auto container">
-                                <Col xs={12} sm={4} className="nav-link"><Link to={`/`}><Button variant={"theme"} className="btn-block"><strong>Home</strong></Button></Link></Col>
-                                <Col xs={12} sm={4} className="nav-link"><Link to={`/freethinkers`}><Button variant={"theme"} className="btn-block"><strong>Freethinkers</strong></Button></Link></Col>
-                                {/* <Col xs={12} sm={4} className="nav-link"><Link to={`/thoughts`}><Button variant={"theme"} className="btn-block"><strong>Thoughts</strong></Button></Link></Col> */}
-                                <Col xs={12} sm={4} className="nav-link"><Link to={`/platforms`}><Button variant={"theme"} className="btn-block"><strong>Platforms</strong></Button></Link></Col>
+                                <Col xs={12} sm={6} className="nav-link"><Link to={`/freethinkers`}><Button variant={"theme"} className="btn-block"><strong>Freethinkers</strong></Button></Link></Col>
+                                <Col xs={12} sm={6} className="nav-link"><Link to={`/platforms`}><Button variant={"theme"} className="btn-block"><strong>Platforms</strong></Button></Link></Col>
                             </Row>
                         </Nav>
                     </Col>

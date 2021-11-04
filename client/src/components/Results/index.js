@@ -23,7 +23,7 @@ const Results = ({input}) => {
         return (
             <Container className="mb-2">
                 <div>
-                    <h5>Results under authors...</h5>
+                    <h5>Results under authors . . .</h5>
                     <hr></hr>
                     <Row className="text-center">
                         {newList.map((index) => (

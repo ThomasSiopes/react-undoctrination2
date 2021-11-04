@@ -1,5 +1,5 @@
 import React from "react";
-import { Redirect, useParams } from "react-router-dom";
+import { Link, Redirect, useParams } from "react-router-dom";
 import { useQuery} from "@apollo/client";
 import MetaTags from "react-meta-tags";
 
@@ -29,15 +29,18 @@ function Quote () {
     const quote = data.quote;
 
     return (
-        <Container className="text-white text-center">
+        <Container>
             <MetaTags>
                 <title>Undoctrination - {quote.author} - {quote.quoteText}</title>
             </MetaTags>
-            <Card className="bg-theme mb-3">
+            <Card className="mb-3">
                 <Card.Body>
-                    <Card.Text className="display-6 container"><span className="quote-body"><i>"{quote.quoteText}"</i></span> - {quote.author}</Card.Text>
+                    <Container>
+                        <Card.Text className="display-6 container"><span className="quote-body" id="main-quote">"{quote.quoteText}"</span></Card.Text>
+                        {/* <Card.Text><Link id="author-attribution">{quote.author}</Link></Card.Text> */}
+                    </Container>
                 </Card.Body>
-                <Card.Footer>
+                <Card.Footer className="bg-theme text-white">
                     <Row>
                         <Col/>
                         {/* {quote.topics.length !== 0 && 
@@ -50,16 +53,16 @@ function Quote () {
                             </Col>
                         } */}
                         <Col xs={12} md={4} lg={3}>
-                            <p>Share: 
-                                <a href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`}><Button className="ms-1" variant={"theme"}><FaFacebookF/></Button></a>
-                                <a href={`https://twitter.com/intent/tweet?url=${window.location.href}`}><Button className="ms-1" variant={"theme"}><FaTwitter/></Button></a>
+                            <p className="mt-2">Share: 
+                                <a href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`}><Button className="mx-1" variant={"theme"}><FaFacebookF/></Button></a>
+                                <a href={`https://twitter.com/intent/tweet?url=${window.location.href}`}><Button className="mx-1" variant={"theme"}><FaTwitter/></Button></a>
                             </p>
                         </Col>
                         <Col/>
                     </Row>
                 </Card.Footer>
             </Card>
-            <Row>
+            <Row className="text-center text-white">
                 <Col xs={12} md={6} lg={4}>
                     <AuthorPortraitButton name={quote.author}/>
                 </Col>

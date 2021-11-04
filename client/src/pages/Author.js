@@ -4,9 +4,9 @@ import { useQuery} from "@apollo/client";
 import MetaTags from "react-meta-tags";
 
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
-import { FaFacebook, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
 
 import TopicButton from "../components/TopicButton";
+import AuthorLink from "../components/AuthorLink";
 
 import { QUERY_AUTHOR_ID } from "../utils/queries";
 
@@ -39,64 +39,53 @@ function Author () {
                 {/* Author Portrait Section */}
                 <Col xs={12} lg={3} className="order-1 order-lg-2 mb-3">
                     <Card bg={"theme"}>
-                        <Row className="align-items-center">
+                        <Row className="align-items-center justify-content-center">
                             {author.thumbnail != null &&
                                 <Col xs={5} lg={12}>
                                     <img className="card-img" src={picPath} alt="Portrait"/>
                                 </Col>
                             }
                             <Col xs={7} lg={12} className="text-center">
-                                <h5 className="card-title mt-2">{author.name}</h5>
+                                <h5 className="card-title mt-3">{author.name}</h5>
                                 {author.description != null &&
                                     <p className="card-text mx-2">{author.description}</p>
                                 }
                             </Col>
                         </Row>
-                            <Container className="mb-2">
+                        <Container className="mb-2">
                             {(author.links.length > 0) &&
                                 <div>
                                     <hr className="my-3"/>
-                                    <Row className="text-center">
-                                        {author.links.map((index) => (
-                                            <Col xs={4} lg={12} className="mb-2" key={index.type}>
-                                                {(index.type === "Website" || index.type === "Site" || index.type === "WebSite") &&
-                                                    <Button variant={"theme"} className="btn-block" href={index.link}>Site</Button>    
-                                                }
-                                                {(index.type === "Facebook" || index.type === "FaceBook") &&
-                                                    <Button variant={"theme"} className="btn-block" href={index.link}><FaFacebook/></Button>    
-                                                }
-                                                {(index.type === "Twitter") &&
-                                                    <Button variant={"theme"} className="btn-block" href={index.link}><FaTwitter/></Button>
-                                                }
-                                                {(index.type === "Instagram" || index.type === "InstaGram") &&
-                                                    <Button variant={"theme"} className="btn-block" href={index.link}><FaInstagram/></Button>
-                                                }
-                                                {(index.type === "Youtube" || index.type === "YouTube") &&
-                                                    <Button variant={"theme"} className="btn-block" href={index.link}><FaYoutube/></Button>
-                                                }
-                                                {(index.type !== "Website" && index.type !== "Site" && index.type !== "WebSite" && index.type !== "Facebook" && index.type !== "FaceBook" && index.type !== "Twitter" && index.type !== "Instagram" && index.type !== "InstaGram" && index.type !== "Youtube" && index.type !== "YouTube") &&
-                                                    <Button variant={"theme"} className="btn-block smaller-text" href={index.link}>{index.type}</Button>
-                                                }
-                                            </Col>
-                                        ))}
-                                    </Row>
+                                    {author.links.length <= 2 ?
+                                        <Row className="text-center justify-content-center">
+                                            {author.links.map((linkName) => (
+                                                <AuthorLink input={linkName} key={linkName.type}/>
+                                            ))}
+                                        </Row>
+                                    : 
+                                         <Row className="text-center">
+                                            {author.links.map((linkName) => (
+                                                <AuthorLink input={linkName} key={linkName.type}/>
+                                            ))}
+                                        </Row>
+                                    }
                                 </div>
                             }
-                            </Container>
+                        </Container>
                     </Card>
                 </Col>
 
                 {/* Quote Section */}
                 <Col xs={12} lg={9} className="order-2 order-lg-1">
-                    <Row className="text-center">
+                    <Row>
                         <Col xs={12}>
-                            <p className="bg-theme rounded py-1"><strong>Quotes by {author.name}</strong></p>
+                            <p className="bg-theme rounded py-2 text-center">Quotes by {author.name}</p>
                         </Col>
                         {author.quotes.map((index) => (
                             <Col xs={12} className="mb-3" key={index.quoteText}>
                                 <Card className="bg-theme">
                                     <Link to={`/quote/${index._id}`}><Button variant={"theme"} className="btn-block">
-                                        <Container>
+                                        <Container className="text-start">
                                             <Card.Body className="quote-preview">
                                                 "{index.quoteText}"
                                             </Card.Body>

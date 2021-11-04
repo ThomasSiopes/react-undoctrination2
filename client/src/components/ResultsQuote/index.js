@@ -27,13 +27,13 @@ const ResultsQuote = ({input}) => {
         return (
             <Container className="mb-2">
                 <div>
-                    <h5>Results under quotes...</h5>
+                    <h5>Results under quotes . . .</h5>
                     <hr></hr>
                     <Row className="text-center">
                         {newList.map((index) => (
                             <Col xs={12} sm={6} md={4} className="mb-3" key={index.name + index.quoteText}>
                                 <Card>
-                                    <Link to={`/quote/${index._id}`} className="noDecor">
+                                    <Link to={`/quote/${index._id}`} className="text-black">
                                         <Card.Body><i>"{index.quoteText}"</i></Card.Body>
                                     </Link>
                                     <Card.Footer>

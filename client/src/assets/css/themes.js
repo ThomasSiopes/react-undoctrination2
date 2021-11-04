@@ -3,7 +3,7 @@ import { createGlobalStyle } from "styled-components";
 export const defaultTheme = {
     color: "#666",
     darkColor: "#333",
-    lightColor: "bbb"
+    lightColor: "#fff"
 }
 
 export const newTheme = {
@@ -17,6 +17,10 @@ export const GlobalStyles = createGlobalStyle`
 
     a {
         text-decoration: none;
+    }
+
+    #author-attribution {
+
     }
 
     #banner {
@@ -49,6 +53,10 @@ export const GlobalStyles = createGlobalStyle`
         border-color: ${(props) => props.theme.darkColor};
     }
 
+    .card {
+        border-color: ${(props) => props.theme.darkColor};
+    }
+
     .card-footer .btn {
         border-color: #fff!important;
     }
@@ -65,6 +73,10 @@ export const GlobalStyles = createGlobalStyle`
         min-height: 67vh;
     }
 
+    #main-quote {
+        font-size: 2rem;
+    }
+
     #myInput {
         width: 100%;
     }
@@ -78,7 +90,7 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     .quote-body, .quote-preview {
-        font-weight: 500;
+        font-family: 'Merriweather', serif;
     }
 
     .smaller-text {

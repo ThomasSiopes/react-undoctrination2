@@ -6,19 +6,52 @@ import { Card, Button } from "react-bootstrap";
 
 import { QUERY_QUOTE_ALL } from "../../utils/queries";
 
+function compareQuotes(quote1, quote2) {
+    let words1 = quote1.quoteText.split(/\s+/g);
+    let words2 = quote2.quoteText.split(/\s+/g);
+    let forbiddenWords = ["a", "and", "as", "of", "to", "the", "they", "them"];
+
+    let sharedWords = []
+
+    for(let index1 of words1) {
+        for(let index2 of words2) {
+            if((index1.toLowerCase() === index2.toLowerCase()) && !(forbiddenWords.includes(index1.toLowerCase()) && !(sharedWords.includes(index1.toLowerCase())))) {
+                sharedWords.push(index1.toLowerCase());
+            }
+        }
+    }
+
+    if(sharedWords.length >= 6) {
+        console.log("Shared Words:");
+        console.log(sharedWords);
+    }
+
+    return sharedWords.length;
+}
+
 const MoreQuotesBy = ({quote}) => {
     let {loading, data} = useQuery(QUERY_QUOTE_ALL);
 
     if(loading) return <span>Loading...</span>
 
     let similarQuotes = [];
-    let topicCheck;
+    let sharedWordsLength;
+    let currentQuote;
     let quotePile = data.quotes;
 
-    for(let i = 0; (i < quotePile.length) && (similarQuotes.length < 5); ++i) {
-        let currentQuote = quotePile[Math.floor(Math.random() * (quotePile.length-1))];
-        topicCheck = currentQuote.topics.filter(element => quote.topics.includes(element));
-        if((topicCheck !== "") && (currentQuote.quoteText !== quote.quoteText) && !(similarQuotes.includes(currentQuote))) similarQuotes.push(currentQuote);
+    for(let i = 0; (i < quotePile.length) && (similarQuotes.length < 4); ++i) {
+        // currentQuote = quotePile[Math.floor(Math.random() * (quotePile.length-1))];
+        // topicCheck = currentQuote.topics.filter(element => quote.topics.includes(element));
+        // if((topicCheck !== "") && (currentQuote.quoteText !== quote.quoteText) && !(similarQuotes.includes(currentQuote))) similarQuotes.push(currentQuote);
+        currentQuote = quotePile[i];
+
+        if(currentQuote !== quote) {
+            sharedWordsLength = compareQuotes(quote, currentQuote);
+
+            if((sharedWordsLength >= 6) && !(similarQuotes.includes(currentQuote))) {
+                similarQuotes.push(currentQuote);
+            }
+        }
     }
 
     if(similarQuotes.length <= 0) return null;
