@@ -99,6 +99,6 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     #searchTerm {
-        width: 70%;
+        width: 88%;
     }
 `
