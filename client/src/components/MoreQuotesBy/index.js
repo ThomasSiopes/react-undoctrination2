@@ -9,19 +9,19 @@ import { QUERY_QUOTE_ALL } from "../../utils/queries";
 function compareQuotes(quote1, quote2) {
     let words1 = quote1.quoteText.split(/\s+/g);
     let words2 = quote2.quoteText.split(/\s+/g);
-    let forbiddenWords = ["a", "and", "as", "of", "to", "the", "they", "them"];
+    let forbiddenWords = ["a", "and", "as", "get", "like", "of", "people", "to", "the", "they", "them", "when"];
 
     let sharedWords = []
 
     for(let index1 of words1) {
         for(let index2 of words2) {
-            if((index1.toLowerCase() === index2.toLowerCase()) && !(forbiddenWords.includes(index1.toLowerCase()) && !(sharedWords.includes(index1.toLowerCase())))) {
-                sharedWords.push(index1.toLowerCase());
+            if((index1.toLowerCase() === index2.toLowerCase()) && !(forbiddenWords.includes(index2.toLowerCase()) && !(sharedWords.includes(index2.toLowerCase())))) {
+                sharedWords.push(index2.toLowerCase());
             }
         }
     }
 
-    if(sharedWords.length >= 6) {
+    if(sharedWords.length >= 3) {
         console.log("Shared Words:");
         console.log(sharedWords);
     }
@@ -48,7 +48,7 @@ const MoreQuotesBy = ({quote}) => {
         if(currentQuote !== quote) {
             sharedWordsLength = compareQuotes(quote, currentQuote);
 
-            if((sharedWordsLength >= 6) && !(similarQuotes.includes(currentQuote))) {
+            if((sharedWordsLength >= 3) && !(similarQuotes.includes(currentQuote))) {
                 similarQuotes.push(currentQuote);
             }
         }
