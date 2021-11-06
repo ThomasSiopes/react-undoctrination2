@@ -1,13 +1,59 @@
 import { createGlobalStyle } from "styled-components";
 
-export const defaultTheme = {
-    color: "#666",
-    darkColor: "#333",
-    lightColor: "#fff"
+const buttonColors = ({main, dark}) => {
+    return {
+        main: main,
+        dark: dark,
+    }
 }
 
-export const newTheme = {
-    color: "#111"
+export const petra = {
+    color: "#9c2018",
+    lightColor: "#d4a59a",
+    quote: "#f3e0dc",
+    button: buttonColors({main: "#bc4539", dark: "#8c1519"})
+}
+
+export const carbon = {
+    color: "#888",
+    lightColor: "#efefef",
+    quote: "#d4d4d4",
+    button: buttonColors({main: "#cc2b2f", dark: "#990b0f"})
+}
+
+export const minimal = {
+    color: "#a81a13",
+    lightColor: "#dad7cc",
+    quote: "#fff",
+    button: buttonColors({main: "#b82a23", dark: "#980a03"})
+}
+
+export const journal = {
+    color: "#6d7993",
+    lightColor: "#d5d5d5",
+    quote: "#f6f6f6",
+    button: buttonColors({main: "#96858f", dark: "#66555f"})
+}
+
+export const gunmetal = {
+    color: "#22252c",
+    lightColor: "#b0a390",
+    quote: "#e0d3c0",
+    button: buttonColors({main: "#984b43", dark: "#681b13"})
+}
+
+export const brain = {
+    color: "#2f418e",
+    lightColor: "#fff",
+    quote: "#e2e2e2",
+    button: buttonColors({main: "#2f418e", dark: "#354eb1"})
+}
+
+export const redbrain = {
+    color: "#9e311f",
+    lightColor: "#fff",
+    quote: "#e7e7e7",
+    button: buttonColors({main: "#9e311f", dark: "#be412f"})
 }
 
 export const GlobalStyles = createGlobalStyle`
@@ -23,12 +69,16 @@ export const GlobalStyles = createGlobalStyle`
 
     }
 
-    #banner {
+    #banner, #myInput, #NavSearch {
         width: 100%;
     }
 
     .bg-theme {
         background-color: ${(props) => props.theme.color};
+    }
+
+    .bg-quote {
+        background-color: ${(props) => props.theme.quote};
     }
 
     body { 
@@ -43,18 +93,17 @@ export const GlobalStyles = createGlobalStyle`
 
     .btn-theme {
         color: #fff;
-        background-color: ${(props) => props.theme.color};
-        border-color: ${(props) => props.theme.color};
+        background-color: ${(props) => props.theme.button.main};
+        border: none;
     }
 
     .btn-theme:hover {
         color: #fff;
-        background-color: ${(props) => props.theme.darkColor};
-        border-color: ${(props) => props.theme.darkColor};
+        background-color: ${(props) => props.theme.button.dark};
     }
 
     .card {
-        border-color: ${(props) => props.theme.darkColor};
+        border: none;
     }
 
     .card-footer .btn {
@@ -77,16 +126,8 @@ export const GlobalStyles = createGlobalStyle`
         font-size: 2rem;
     }
 
-    #myInput {
-        width: 100%;
-    }
-
     .navbar, .footer {
         width: 100%!important;
-    }
-
-    #NavSearch {
-        width: 100%;
     }
 
     .quote-body, .quote-preview {

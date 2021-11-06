@@ -36,12 +36,12 @@ const MainPageSearch = () => {
     }
 
     return (
-        <Card>
+        <Card className="bg-theme">
             <input type="text" id="myInput" onKeyUp={searchFunction} placeholder="Search for an author..." className="mb-1"/>
             <Row id="myGroup" className="text-center">
                 {authorList.map((index) => (
                     <Col xs={12} key= {"search: " + index.name} className="my-1">
-                        <Link to={`/author/${index._id}`}>{index.name}</Link>
+                        <Link className="text-white" to={`/author/${index._id}`}>{index.name}</Link>
                     </Col>
                 ))}
             </Row>

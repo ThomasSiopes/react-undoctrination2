@@ -9,7 +9,7 @@ import { QUERY_QUOTE_ALL } from "../../utils/queries";
 function compareQuotes(quote1, quote2) {
     let words1 = quote1.quoteText.split(/\s+/g);
     let words2 = quote2.quoteText.split(/\s+/g);
-    let forbiddenWords = ["a", "and", "as", "get", "like", "of", "people", "to", "the", "they", "them", "when"];
+    let forbiddenWords = ["a", "and", "as", "are", "for", "get", "is", "i", "it", "like", "of", "out", "people", "to", "that", "the", "there", "they", "them", "want", "when", "making", "keep", "on"];
 
     let sharedWords = []
 
@@ -21,7 +21,7 @@ function compareQuotes(quote1, quote2) {
         }
     }
 
-    if(sharedWords.length >= 3) {
+    if(sharedWords.length >= 1) {
         console.log("Shared Words:");
         console.log(sharedWords);
     }
@@ -48,7 +48,7 @@ const MoreQuotesBy = ({quote}) => {
         if(currentQuote !== quote) {
             sharedWordsLength = compareQuotes(quote, currentQuote);
 
-            if((sharedWordsLength >= 3) && !(similarQuotes.includes(currentQuote))) {
+            if((sharedWordsLength >= 1) && !(similarQuotes.includes(currentQuote))) {
                 similarQuotes.push(currentQuote);
             }
         }

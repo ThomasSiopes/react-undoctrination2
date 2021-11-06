@@ -22,7 +22,6 @@ const FooterPage = () => {
                             <p><Link className="text-white" to={`/`}>Authors</Link></p>
                             <p><Link className="text-white" to={`/freethinkers`}>Freethinkers</Link></p>
                             <p><Link className="text-white" to={`/platforms`}>Platforms</Link></p>
-                            {/* <p><Link className="text-white" to={`/thoughts`}>Thoughts</Link></p> */}
                         </i>
                     </Col>
                 </Row>

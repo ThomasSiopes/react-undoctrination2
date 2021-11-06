@@ -5,7 +5,6 @@ import MetaTags from "react-meta-tags";
 
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 
-import TopicButton from "../components/TopicButton";
 import AuthorLink from "../components/AuthorLink";
 
 import { QUERY_AUTHOR_ID } from "../utils/queries";

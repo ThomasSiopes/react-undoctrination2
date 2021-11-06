@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Redirect, useParams } from 'react-router-dom';
+import { Redirect, useParams } from 'react-router-dom';
 import { Container } from "react-bootstrap";
 import MetaTags from "react-meta-tags";
 

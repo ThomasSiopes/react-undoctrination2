@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 //Styles
 import 'bootstrap/dist/css/bootstrap.min.css';
 import styled, { ThemeProvider } from "styled-components";
-import { defaultTheme, newTheme, GlobalStyles } from "./assets/css/themes";
+import { petra, minimal, carbon, journal, GlobalStyles, gunmetal, brain, redbrain } from "./assets/css/themes";
 
 //Components
 import NavBar from "./components/NavBar";
@@ -45,13 +45,26 @@ const client = new ApolloClient({
 
 const StyledApp = styled.div``;
 
+const findTheme = (theme) => {
+  switch(theme) {
+    case "petra": return petra;
+    case "minimal": return minimal;
+    case "carbon": return carbon;
+    case "journal": return journal;
+    case "gunmetal": return gunmetal;
+    case "brain": return brain;
+    case "redbrain": return redbrain;
+    default: return journal;
+  }
+}
+
 function App() {
-  const [theme] = useState("default");
+  const [theme] = useState("gunmetal");
 
   return (
     <ApolloProvider client={client}>
       <Router>
-        <ThemeProvider theme={theme === "default" ? defaultTheme : newTheme}>
+        <ThemeProvider theme={findTheme(theme)}>
           <GlobalStyles/>
           <NavBar/>
           <StyledApp className="mainBody">
