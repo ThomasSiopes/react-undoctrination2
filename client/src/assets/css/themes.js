@@ -38,7 +38,7 @@ export const journal = {
 export const gunmetal = {
     color: "#22252c",
     lightColor: "#b0a390",
-    quote: "#e0d3c0",
+    quote: "#f7f3ed",
     button: buttonColors({main: "#984b43", dark: "#681b13"})
 }
 
@@ -77,9 +77,9 @@ export const GlobalStyles = createGlobalStyle`
         background-color: ${(props) => props.theme.color};
     }
 
-    .bg-quote {
-        background-color: ${(props) => props.theme.quote};
-    }
+    // .bg-quote {
+    //     background-color: ${(props) => props.theme.quote};
+    // }
 
     body { 
         background-color: ${(props) => props.theme.lightColor};
@@ -114,6 +114,14 @@ export const GlobalStyles = createGlobalStyle`
         font-weight: 600;
     }
 
+    .link-theme {
+        color: ${(props) => props.theme.button.main};
+    }
+
+    .link-theme:hover {
+        color: ${(props) => props.theme.button.dark};
+    }
+
     img {
         max-width: 100%;
     }
@@ -134,6 +142,18 @@ export const GlobalStyles = createGlobalStyle`
         font-family: 'Merriweather', serif;
     }
 
+    .quote-footer {
+        background-color: ${(props) => props.theme.color};
+    }
+
+    .quote-page {
+        background-image: url("/assets/images/thumbnails/undoctrination_icon_bw.png");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: ${(props) => props.theme.quote};
+    }
+
     .smaller-text {
         font-size: 14px;
         font-weight: 650;
@@ -141,5 +161,34 @@ export const GlobalStyles = createGlobalStyle`
 
     #searchTerm {
         width: 88%;
+    }
+
+    .share-button {
+        font-size: 1.8rem;
+        transition: all 0.4s ease;
+    }
+
+    #share-twitter {
+        color: #1DA1F2 !important;
+    }
+
+    #share-twitter:hover {
+        color: #0d476b !important;
+    }
+
+    #share-facebook {
+        color: #4867AA !important;
+    }
+
+    #share-facebook:hover {
+        color: #1c315e !important;
+    }
+
+    #share-reddit {
+        color: #fc5011 !important;
+    }
+
+    #share-reddit:hover {
+        color: #782c10 !important;
     }
 `

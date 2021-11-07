@@ -1,12 +1,13 @@
 import React from "react";
-import { Redirect, useParams } from "react-router-dom";
+import { Link, Redirect, useParams } from "react-router-dom";
 import { useQuery} from "@apollo/client";
 import MetaTags from "react-meta-tags";
 
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
-import { FaTwitter, FaFacebookF } from "react-icons/fa";
+import { FaTwitter, FaFacebookF, FaReddit } from "react-icons/fa";
 
 // import TopicButton from "../components/TopicButton";
+import AuthorButton from "../components/AuthorButton";
 import AuthorPortraitButton from "../components/AuthorPortraitButton";
 import MoreQuotesBy from "../components/MoreQuotesBy";
 
@@ -33,27 +34,26 @@ function Quote () {
             <MetaTags>
                 <title>Undoctrination - {quote.author} - {quote.quoteText}</title>
             </MetaTags>
-            <Card className="mb-3 rounded">
-                <Card.Body className="bg-quote rounded">
-                    <Container>
-                        <Card.Text className="display-6 container"><span className="quote-body" id="main-quote">"{quote.quoteText}"</span></Card.Text>
-                        {/* <Card.Text><Link id="author-attribution">{quote.author}</Link></Card.Text> */}
-                    </Container>
-                </Card.Body>
-                <Card.Footer className="bg-theme text-white text-center rounded">
-                    <div>
-                        <p className="mt-2">Share: 
-                            <a href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`}><Button className="mx-1" variant={"theme"}><FaFacebookF/></Button></a>
-                            <a href={`https://twitter.com/intent/tweet?url=${window.location.href}`}><Button className="mx-1" variant={"theme"}><FaTwitter/></Button></a>
-                        </p>
-                    </div>
-                </Card.Footer>
-            </Card>
-            <Row className="text-center text-white">
-                <Col xs={12} md={6} lg={4}>
+            <Row>
+                <Col xs={12} lg={9}>
+                    <Card className="mb-3 rounded">
+                        <Card.Body className="py-4 rounded quote-page">
+                            <Container>
+                                <Card.Text className="display-6"><span className="quote-body" id="main-quote">"{quote.quoteText}"</span></Card.Text>
+                                <Card.Text className="d-xs-block d-lg-none"><strong><AuthorButton type={"link"} name={quote.author}/></strong></Card.Text>
+                            </Container>
+                        </Card.Body>
+                        <Card.Footer className="text-center pb-3 quote-footer">
+                            <Link className="mx-3 share-button" to={`https://twitter.com/intent/tweet?url=${window.location.href}`} id="share-twitter"><FaTwitter/></Link>
+                            <Link className="mx-3 share-button" to={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`} id="share-facebook"><FaFacebookF/></Link>
+                            <Link className="mx-3 share-button" to={``} id="share-reddit"><FaReddit/></Link>
+                        </Card.Footer>
+                    </Card>
+                </Col>
+                <Col lg={3} className="text-center text-white d-none d-lg-block">
                     <AuthorPortraitButton name={quote.author}/>
                 </Col>
-                <Col xs={12} md={6} lg={8}>
+                <Col xs={12} className="text-center text-white">
                     <MoreQuotesBy quote={quote}/>
                 </Col>
             </Row>

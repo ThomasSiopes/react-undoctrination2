@@ -29,15 +29,15 @@ const ResultsQuote = ({input}) => {
                 <div>
                     <h5>Results under quotes . . .</h5>
                     <hr></hr>
-                    <Row className="text-center">
+                    <Row className="">
                         {newList.map((index) => (
                             <Col xs={12} sm={6} md={4} className="mb-3" key={index.name + index.quoteText}>
                                 <Card>
-                                    <Link to={`/quote/${index._id}`} className="text-black">
+                                    <Link to={`/quote/${index._id}`} className="text-black quote-page">
                                         <Card.Body><i>"{index.quoteText}"</i></Card.Body>
                                     </Link>
-                                    <Card.Footer>
-                                        <AuthorButton key={index.author} name={index.author}></AuthorButton>
+                                    <Card.Footer className="quote-footer text-center">
+                                        <AuthorButton key={index.author} type={"button"} name={index.author}/>
                                     </Card.Footer>
                                 </Card>
                             </Col>
