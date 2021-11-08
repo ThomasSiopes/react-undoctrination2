@@ -42,7 +42,8 @@ class NavBar extends React.Component {
                                     <Col xs={12} lg={8}>
                                         <Form id="NavSearch" className="mb-2" onSubmit={this.handleSubmit}>
                                             <input type="text" id="searchTerm" placeholder="Search..." className="me-3 my-2 rounded" onChange={this.handleChange}></input>
-                                            <FaSearch className="text-white" type="submit" onClick={this.handleSubmit}/>
+                                            <FaSearch className="text-white d-none d-md-inline" type="submit" onClick={this.handleSubmit}/>
+                                            <input type="submit" value="Search" className="d-xs-inline d-md-none"/>
                                         </Form>
                                     </Col>
                                 </Row>

@@ -4,7 +4,7 @@ import { FaFacebook, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
 
 const AuthorLink = ({input}) => {
     return (
-        <Col sm={4} md={12} className="mb-2">
+        <Col xs={12} sm={4} lg={12} className="mb-2">
             {(input.type === "Website" || input.type === "Site" || input.type === "WebSite") &&
                 <Button variant={"theme"} className="btn-block" href={input.link}>Site</Button>    
             }
