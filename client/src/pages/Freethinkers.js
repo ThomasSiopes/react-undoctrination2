@@ -17,7 +17,14 @@ function Freethinkers () {
         if(index.FT !== "n") authorList.push(index)
     }
 
-    authorList = authorList.sort((a, b) => a.name.localeCompare(b.name));
+    if(authorList[0].lastName) {
+        console.log("Last Name detected");
+        authorList = authorList.sort((a, b) => a.lastName.localeCompare(b.lastName));
+    }
+    else {
+        console.log("No last name, sorting by first names");
+        authorList.sort((a, b) => a.name.localeCompare(b.name));
+    }
 
     const searchFunction = () => {
         let input, filter, group, elements, body, textValue;

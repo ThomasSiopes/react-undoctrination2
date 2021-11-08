@@ -13,7 +13,7 @@ const Results = ({input}) => {
 
     input = input.toUpperCase();
 
-    if(loading) return <p>Loading...</p>
+    if(loading || !authList) return <p>Loading...</p>
 
     for(let index of authList.authors) {
         if(index.name.toUpperCase().indexOf(input) > -1) newList.push(index);
@@ -23,7 +23,7 @@ const Results = ({input}) => {
         return (
             <Container className="mb-2">
                 <div>
-                    <h5>Results under authors . . .</h5>
+                    <h5>Results under authors and freethinkers . . .</h5>
                     <hr></hr>
                     <Row className="text-center">
                         {newList.map((index) => (

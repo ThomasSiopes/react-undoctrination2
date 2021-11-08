@@ -6,6 +6,7 @@ const typeDefs = gql`
         name: String
         FT: String
         quotes: [Quote]!
+        lastName: String
         color: String
         darkColor: String
         lightColor: String

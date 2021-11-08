@@ -17,7 +17,7 @@ const ResultsQuote = ({input}) => {
     input = input.toUpperCase();
     // console.log(input);
     
-    if(loading) return <p>Loading...</p>
+    if(loading || !quoteList) return <p>Loading...</p>
 
     for(let index of quoteList.quotes) {
         if(index.quoteText.toUpperCase().indexOf(input) > -1) newList.push(index);

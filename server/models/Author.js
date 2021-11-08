@@ -26,6 +26,10 @@ const authorSchema = new Schema({
             ref: "Quote",
         },
     ],
+    lastName: {
+        type: String,
+        required: true,
+    },
     color: {
         type: String,
         required: false,

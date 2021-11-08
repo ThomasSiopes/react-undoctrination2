@@ -1,6 +1,4 @@
 # To Do
-- Card update on main page
-- Make theme change colors
-
-- Resources?
 - Footer Description
+
+- Fix stupid search function loading issue

@@ -38,7 +38,7 @@ export const journal = {
 export const gunmetal = {
     color: "#22252c",
     lightColor: "#b0a390",
-    quote: "#f7f3ed",
+    quote: "#d9d3ca",
     button: buttonColors({main: "#984b43", dark: "#681b13"})
 }
 

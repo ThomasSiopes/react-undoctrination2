@@ -12,6 +12,7 @@ export const QUERY_AUTHOR_ALL = gql`
                 author
                 topics
             }
+            lastName
             color
             darkColor
             lightColor
@@ -37,6 +38,7 @@ export const QUERY_AUTHOR_NAME = gql`
                 author
                 topics
             }
+            lastName
             color
             darkColor
             lightColor
@@ -62,6 +64,7 @@ export const QUERY_AUTHOR_ID = gql`
                 author
                 topics
             }
+            lastName
             color
             darkColor
             lightColor
