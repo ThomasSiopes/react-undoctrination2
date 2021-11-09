@@ -32,22 +32,24 @@ class NavBar extends React.Component {
                 <Container>
                     <Nav>
                         <div className="text-center mx-4" id="banner">
-                                <Link to={`/`} title="Home" className="navIcon"><img src="/assets/images/thumbnails/undoctrination.png" alt="Logo"/></Link>
-                            <div>
-                                <Row className="mx-auto container">
-                                    <Col xs={6} sm={6} lg={2} className="nav-link"><Link to={`/freethinkers`}><Button variant={"theme"} className="btn-block"><strong>Freethinkers</strong></Button></Link></Col>
-                                    <Col xs={6} sm={6} lg={2} className="nav-link"><Link to={`/platforms`}><Button variant={"theme"} className="btn-block"><strong>Platforms</strong></Button></Link></Col>
-                                    <Col xs={12} lg={8}>
-                                        <Form id="NavSearch" className="mb-2" onSubmit={this.handleSubmit}>
-                                            <Row>
-                                                <Col xs={9} md={11}><input type="text" id="searchTerm" placeholder="Search..." className="me-3 my-2 rounded" onChange={this.handleChange}></input></Col>
-                                                <Col xs={1} className="text-white d-none d-md-inline ps-0"><FaSearch className="mt-3" type="submit" onClick={this.handleSubmit}/></Col>
-                                                <Col xs={3} className="d-xs-inline d-md-none ps-0"><input className="mt-2" type="submit" value="Search"/></Col>
-                                            </Row>
-                                        </Form>
-                                    </Col>
-                                </Row>
-                            </div>
+                            <Row className="align-items-end">
+                                <Col x={12} md={6} lg={7}><Link to={`/`} title="Home" className="navIcon"><img src="/assets/images/thumbnails/undoctrination.png" alt="Logo"/></Link></Col>
+                                <Col x={12} md={6} lg={5}>
+                                    <Row className="mx-auto container mb-2">
+                                        <Col xs={6} className="nav-link"><Link to={`/freethinkers`}><Button variant={"theme"} className="btn-block"><strong>Freethinkers</strong></Button></Link></Col>
+                                        <Col xs={6} className="nav-link"><Link to={`/platforms`}><Button variant={"theme"} className="btn-block"><strong>Platforms</strong></Button></Link></Col>
+                                        {/* <Col xs={12} lg={8}>
+                                            <Form id="NavSearch" className="mb-2" onSubmit={this.handleSubmit}>
+                                                <Row>
+                                                    <Col xs={9} md={11}><input type="text" id="searchTerm" placeholder="Search..." className="me-3 my-2 rounded" onChange={this.handleChange}></input></Col>
+                                                    <Col xs={1} className="text-white d-none d-md-inline ps-0"><FaSearch className="mt-3" type="submit" onClick={this.handleSubmit}/></Col>
+                                                    <Col xs={3} className="d-xs-inline d-md-none ps-0"><input className="mt-2" type="submit" value="Search"/></Col>
+                                                </Row>
+                                            </Form>
+                                        </Col> */}
+                                    </Row>
+                                </Col>
+                            </Row>
                         </div>
                     </Nav>
                 </Container>
