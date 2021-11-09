@@ -21,6 +21,11 @@ const PlatformSpecific = () => {
         if(index.type === type) linkList.push(index);
     }
 
+    if(linkList[0].lastName) {
+        console.log("Last Name detected");
+        linkList = linkList.sort((a, b) => a.lastName.localeCompare(b.lastName));
+    }
+
     let typeName = type.charAt(0).toUpperCase() + type.slice(1);
     
     return (
