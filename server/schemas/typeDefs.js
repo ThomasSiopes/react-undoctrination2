@@ -37,6 +37,7 @@ const typeDefs = gql`
         type: String
         text: String
         link: String
+        lastName: String
     }
 
     type Query {

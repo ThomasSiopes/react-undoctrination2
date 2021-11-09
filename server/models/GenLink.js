@@ -12,6 +12,10 @@ const genLinkSchema = new Schema({
     link: {
         type: String,
         required: true,
+    },
+    lastName: {
+        type: String,
+        required: false,
     }
 });
 

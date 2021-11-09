@@ -151,6 +151,7 @@ export const QUERY_LINKS = gql`
             type
             text
             link
+            lastName
         }
     }
 `;

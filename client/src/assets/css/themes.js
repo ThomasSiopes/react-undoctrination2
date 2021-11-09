@@ -77,10 +77,6 @@ export const GlobalStyles = createGlobalStyle`
         background-color: ${(props) => props.theme.color};
     }
 
-    // .bg-quote {
-    //     background-color: ${(props) => props.theme.quote};
-    // }
-
     body { 
         background-color: ${(props) => props.theme.lightColor};
     }
@@ -160,7 +156,7 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     #searchTerm {
-        width: 88%;
+        width: 100%;
     }
 
     .share-button {
