@@ -134,6 +134,10 @@ export const GlobalStyles = createGlobalStyle`
         width: 100%!important;
     }
 
+    .nav-link .btn-block {
+        font-size: 0.9rem;
+    }
+
     .quote-body, .quote-preview {
         font-family: 'Merriweather', serif;
     }
