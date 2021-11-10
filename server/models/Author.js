@@ -51,6 +51,10 @@ const authorSchema = new Schema({
             type: socialLinkSchema,
         }
     ],
+    order: {
+        type: Number,
+        required: false
+    },
     description: {
         type: String,
         required: false,

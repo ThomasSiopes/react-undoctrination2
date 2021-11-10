@@ -22,6 +22,7 @@ export const QUERY_AUTHOR_ALL = gql`
                 link
             }
             description
+            order
         }
     }
 `;
@@ -48,6 +49,7 @@ export const QUERY_AUTHOR_NAME = gql`
                 link
             }
             description
+            order
         }
     }
 `;
@@ -74,6 +76,7 @@ export const QUERY_AUTHOR_ID = gql`
                 link
             }
             description
+            order
         }
     }
 `;

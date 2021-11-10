@@ -12,6 +12,7 @@ const typeDefs = gql`
         lightColor: String
         thumbnail: String
         links: [Link]!
+        order: Int
         description: String
     }
 
