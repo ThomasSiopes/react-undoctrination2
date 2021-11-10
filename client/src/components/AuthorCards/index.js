@@ -31,7 +31,7 @@ const AuthorCards = () => {
     }
     // console.log(authorList);
 
-    authorList = authorList.sort((a, b) => (b.quotes.length) - (a.quotes.length));
+    authorList = authorList.sort((a, b) => (a.order) - (b.order));
 
     return (
         <Row>

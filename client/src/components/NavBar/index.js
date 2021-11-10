@@ -32,17 +32,22 @@ class NavBar extends React.Component {
                 <Container>
                     <Nav>
                         <div className="text-center" id="banner">
-                            <Row className="align-items-end">
-                                <Col xs={12} md={12} className="px-1 mb-1"><Link to={`/`} title="Home" className="navIcon"><img src="/assets/images/thumbnails/undoctrinationShort.png" alt="Logo"/></Link></Col>
-                                <Col xs={12} lg={7}>
-                                    <Container>
-                                        <Row className="align-items-end">
-                                            <Col xs={10} md={12}><img src="/assets/images/thumbnails/tagline.png" alt="Logo"/></Col>
-                                            <Col xs={2} className="ps-0"><Navbar.Toggle aria-controls="main-navbar" className="mb-2"/></Col>
-                                        </Row>
-                                    </Container>
+                            <Row>
+                                <Col xs={12} lg={6}>
+                                    <Row>
+                                        <Col xs={12} className="px-1"><Link to={`/`} title="Home" className="navIcon"><img src="/assets/images/thumbnails/undoctrinationShort.png" alt="Logo"/></Link></Col>
+                                        <Col xs={12} md={4} className="d-xs-block d-md-none mt-2">
+                                            <Container>
+                                                <Row className="align-items-end">
+                                                    <Col xs={10} className=""><img src="/assets/images/thumbnails/tagline.png" alt="Logo"/></Col>
+                                                    <Col xs={2} className=""><Navbar.Toggle aria-controls="main-navbar" className="mb-2"/></Col>
+                                                </Row>
+                                            </Container>
+                                        </Col>
+                                        <Col md={12} className="d-none d-md-block my-1"><img src="/assets/images/thumbnails/tagline.png" style={{maxWidth: "50%"}} alt="Logo"/></Col>
+                                    </Row>
                                 </Col>
-                                <Col xs={12} lg={5}>
+                                <Col xs={12} lg={6} className="align-self-end">
                                     <Navbar.Collapse id="main-navbar" className="justify-content-center">
                                         <Container>
                                             <Row className="mb-2">
@@ -54,7 +59,7 @@ class NavBar extends React.Component {
                                                         <Row>
                                                             <Col xs={10} md={11}><input type="text" id="searchTerm" placeholder="Search..." className="me-3 my-2 rounded" onChange={this.handleChange}></input></Col>
                                                             <Col xs={1} className="text-white d-none d-md-inline ps-0"><FaSearch className="mt-3" type="submit" onClick={this.handleSubmit}/></Col>
-                                                            <Col xs={2} className="d-xs-inline d-md-none ps-0"><input className="mt-2" type="submit" value="Search"/></Col>
+                                                            <Col xs={2} className="d-xs-inline d-md-none ps-0"><input className="mt-2 btn btn-theme" type="submit" value="Search"/></Col>
                                                         </Row>
                                                     </Form>
                                                 </Col>
