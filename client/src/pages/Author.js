@@ -78,7 +78,7 @@ function Author () {
                 <Col xs={12} lg={9} className="order-2 order-lg-1">
                     <Row>
                         <Col xs={12}>
-                            <p className="bg-theme rounded py-2 text-center"><strong>{author.name}</strong> Quotes</p>
+                            <p className="bg-theme rounded py-2 text-center"><strong>{author.name}</strong> quotes</p>
                         </Col>
                         {author.quotes.map((index) => (
                             <Col xs={12} className="mb-3" key={index.quoteText}>
