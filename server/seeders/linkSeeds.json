@@ -1,6 +1,4 @@
 [
- "lastName": "XXXXXXXXXX",
-
 {"type": "twitter", "text": "The AfroConservative", "lastName": "AfroConservative", "link": "https://twitter.com/kdlewis04"},    
 {"type": "twitter", "text": "Ricardo Agnant", "lastName": "Agnant", "link": "https://twitter.com/rpof_ragnant"},
 {"type": "twitter", "text": "Ayaan Hirsi Ali", "lastName": "AliX", "link": "https://twitter.com/Ayaan"},
@@ -499,5 +497,5 @@
 {"type": "parler", "text": "Candace Owens", "link": "https://parler.com/user/Candace"},
 {"type": "parler", "text": "Placeholder PRLR", "link": "placeholder"},
 {"type": "parler", "text": "Placeholder PRLR", "link": "placeholder"},
-{"type": "parler", "text": "Allen West", "link": "https://parler.com/user/AllenWest"},
+{"type": "parler", "text": "Allen West", "link": "https://parler.com/user/AllenWest"}
 ]
