@@ -28,7 +28,7 @@ class NavBar extends React.Component {
         }
         else {        
             return(
-            <Navbar className="mb-3">
+            <Navbar variant={"dark"} className="mb-3">
                 <Container>
                     <Nav>
                         <div className="text-center mx-4" id="banner">
