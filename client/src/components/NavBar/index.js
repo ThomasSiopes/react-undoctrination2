@@ -35,8 +35,8 @@ class NavBar extends React.Component {
                             <Row className="align-items-end">
                                 <Col xs={12} lg={7}>
                                     <Row className="align-items-end">
-                                        <Col xs={10} md={12}><Link to={`/`} title="Home" className="navIcon"><img src="/assets/images/thumbnails/undoctrination.png" alt="Logo"/></Link></Col>
-                                        <Col xs={2}><Navbar.Toggle aria-controls="main-navbar" className="mb-3"/></Col>
+                                        <Col xs={10} md={12} className="px-1"><Link to={`/`} title="Home" className="navIcon"><img src="/assets/images/thumbnails/undoctrination.png" alt="Logo"/></Link></Col>
+                                        <Col xs={2} className="ps-0"><Navbar.Toggle aria-controls="main-navbar" className="mb-3"/></Col>
                                     </Row>
                                 </Col>
                                 <Col xs={12} lg={5}>
