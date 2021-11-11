@@ -94,9 +94,6 @@ function App() {
               <Route exact path="/platforms/:type">
                 <PlatformSpecific/>
               </Route>
-              <Route exact path="/search">
-                <Search/>
-              </Route>
               <Route exact path="/search/:query">
                 <SearchResult/>
               </Route>

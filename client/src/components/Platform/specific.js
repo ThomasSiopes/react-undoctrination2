@@ -13,16 +13,12 @@ const PlatformSpecific = () => {
 
     if(loading || !data) return <p>Loading...</p>
 
-    console.log("type: " + type);
-    console.log("fetched data: " + data);
-
     let linkList = []
     for(let index of data.genLinks) {
         if(index.type === type) linkList.push(index);
     }
 
     if(linkList[0].lastName) {
-        console.log("Last Name detected");
         linkList = linkList.sort((a, b) => a.lastName.localeCompare(b.lastName));
     }
 
@@ -33,14 +29,14 @@ const PlatformSpecific = () => {
             <MetaTags>
                 <title>Undoctrination - Platforms - {typeName}</title>
             </MetaTags>
-            <h3 className="bg-theme rounded py-3 mb-3">Recommended {typeName} Pages</h3>
-            <Row>
-                <Col xs={1}>
-                    <Link to={`/platforms`} className="text-white"><Button variant={"theme"} className="mb-3">Back</Button></Link>
+            <Row className="mb-2">
+                <Col xs={2} lg={1} className="mb-2">
+                    <Link to={`/platforms`} className="text-white"><Button variant={"theme"} className="btn-block">Back</Button></Link>
                 </Col>
                 <Col>
-                    <hr className="text-black"></hr>
+                    <h3 className="bg-theme rounded py-3">{typeName}</h3>
                 </Col>
+                <Col xs={2} lg={1}/>
             </Row>
             <Row>
                 {linkList.map((index) => (

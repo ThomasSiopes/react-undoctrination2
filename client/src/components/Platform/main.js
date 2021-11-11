@@ -11,7 +11,7 @@ const PlatformMain = () => {
             <MetaTags>
                 <title>Undoctrination - Platforms</title>
             </MetaTags>
-            <h3 className="bg-theme rounded py-3 mb-3">Other Platforms</h3>
+            <h3 className="bg-theme rounded py-3 mb-3">Platforms</h3>
             <Row>
                 <Col xs={12} className="mb-3">
                     <hr className="text-black"></hr>

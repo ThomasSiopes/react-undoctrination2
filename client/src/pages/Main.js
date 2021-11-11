@@ -12,8 +12,8 @@ function Main() {
                 <title>Undoctrination</title>
             </MetaTags>
             <Row>
-                <Col xs={12} md={9}><AuthorCards/></Col>
-                <Col xs={12} md={3}><MainPageSearch/></Col>
+                <Col xs={12} lg={9}><AuthorCards/></Col>
+                <Col lg={3} className="d-none d-lg-block"><MainPageSearch/></Col>
             </Row>            
         </Container>
     )
