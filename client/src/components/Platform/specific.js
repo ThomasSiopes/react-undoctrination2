@@ -30,14 +30,15 @@ const PlatformSpecific = () => {
                 <title>Undoctrination - Platforms - {typeName}</title>
             </MetaTags>
             <Row className="mb-2">
-                <Col xs={2} lg={1} className="mb-2">
-                    <Link to={`/platforms`} className="text-white"><Button variant={"theme"} className="btn-block">Back</Button></Link>
+                <Col xs={2} lg={1} className="p-0 m-0">
+                    <Link to={`/platforms`} className="text-white"><Button variant={"theme"} className="btn-block rounded-0 rounded-start">Back</Button></Link>
                 </Col>
-                <Col>
-                    <h3 className="bg-theme rounded py-3">{typeName}</h3>
+                <Col className="bg-theme rounded-0 py-3">
+                    <h3>{typeName}</h3>
                 </Col>
-                <Col xs={2} lg={1}/>
+                <Col className="bg-theme rounded-end py-3" xs={2} lg={1}/>
             </Row>
+            <hr/>
             <Row>
                 {linkList.map((index) => (
                     <Col xs={6} md={3} className="mb-2" key={index.text}>

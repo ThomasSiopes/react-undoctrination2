@@ -9,20 +9,30 @@ import { QUERY_QUOTE_ALL } from "../../utils/queries";
 function compareQuotes(quote1, quote2) {
     let words1 = quote1.quoteText.split(/\s+/g);
     let words2 = quote2.quoteText.split(/\s+/g);
-    let forbiddenWords = ["A", "About", "Above", "actual", "All", "almost", "always", "an", "and", "any", "anyone", "anything", "are", "around", "as", "ask", "at", "be", "being", "because", "been", "best", "better", "between", "bring", "but", "buy", "by", "call", "can", "can’t", "cannot", "continue", "could", "didn’t", "do", "does", "doesn’t", "done", "down", "else", "end", "enough", "even", "every", "exist", "follow", "for", "from", "further", "get", "give", "given", "gives", "go", "goes", "going", "had", "has", "have", "having", "her", "her", "how", "however", "huge", "I", "If", "In", "into", "It", "its", "Just", "Know", "less", "Let", "Like", "Long", "made", "main", "make", "many", "maybe", "Me", "Might", "More", "must", "my", "need", "needs", "never", "next", "no", "Not", "nothing", "now", "Of", "off", "on", "once", "One", "Only", "onto", "Or", "other", "Our", "Out", "Over", "own", "people", "Please", "Put", "real", "really", "Same", "say", "see", "should", "So", "Some", "Speak", "Such", "Take", "taken", "talk", "Tell", "than", "that", "the", "their", "them", "there", "these", "they", "think", "this", "those", "though", "this", "through", "to", "too", "try", "trying", "under", "unless", "up", "us", "use", "used", "using", "want", "was", "way", "we", "were", "what", "when", "where", "who", "whom", "why", "will", "with", "won’t", "worse", "worst", "would", "yet", "you", "your"];
+    let forbiddenWords = ["A", "About", "Above", "actual", "All", "almost", "always", "an", "and", "any", "anyone", "anything", "are", "around", "as", "ask", "at", "be", "being", "because", "been", "best", "better", "between", "bring", "but", "buy", "by", "call", "can", "can’t", "cannot", "continue", "could", "didn’t", "do", "does", "doesn’t", "done", "down", "else", "end", "enough", "even", "every", "exist", "follow", "for", "from", "further", "get", "give", "given", "gives", "go", "goes", "going", "had", "has", "have", "having", "her", "her", "how", "however", "huge", "I", "If", "In", "into", "It", "its", "is", "Just", "Know", "less", "Let", "Like", "Long", "made", "main", "make", "many", "maybe", "Me", "Might", "More", "must", "my", "need", "needs", "never", "next", "no", "Not", "nothing", "now", "Of", "off", "on", "once", "One", "Only", "onto", "Or", "other", "Our", "Out", "Over", "own", "people", "Please", "Put", "real", "really", "Same", "say", "see", "should", "So", "Some", "Speak", "Such", "Take", "taken", "talk", "Tell", "than", "that", "the", "their", "them", "there", "these", "they", "think", "this", "those", "though", "this", "through", "to", "too", "try", "trying", "under", "unless", "up", "us", "use", "used", "using", "want", "was", "way", "we", "were", "what", "when", "where", "who", "whom", "why", "will", "with", "won’t", "worse", "worst", "would", "yet", "you", "your"];
+    forbiddenWords = forbiddenWords.join('|').toLowerCase().split('|');
 
     let sharedWords = [];
 
     for(let index1 of words1) {
         if(!(sharedWords.includes(index1.toLowerCase()))) {
-            for(let index2 of words2) {
-                if(!(forbiddenWords.includes(index2.toLowerCase()))) {
-                    if(index1.toLowerCase() === index2.toLowerCase()) {
-                        console.log("Shared Word: " + index1);
-                        if(!(sharedWords.includes(index2.toLowerCase()))) sharedWords.push(index2.toLowerCase());
+            if(!(forbiddenWords.includes(index1.toLowerCase()))) {
+                for(let index2 of words2) {
+                    if(!(forbiddenWords.includes(index2.toLowerCase()))) {
+                        if(index1.toLowerCase() === index2.toLowerCase()) {
+                            console.log("Shared Word: " + index1);
+                            if(!(sharedWords.includes(index2.toLowerCase()))) sharedWords.push(index2.toLowerCase());
+                        }
                     }
                 }
             }
+        }
+    }
+
+    for(let index3 = 0; index3 < sharedWords.length; ++index3) {
+        console.log("Testing for " + sharedWords[index3])
+        if(forbiddenWords.includes(sharedWords[index3]) || forbiddenWords.includes(sharedWords[index3].toLowerCase())) {
+            sharedWords.splice(index3, 1);
         }
     }
 
