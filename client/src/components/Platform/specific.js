@@ -29,14 +29,14 @@ const PlatformSpecific = () => {
             <MetaTags>
                 <title>Undoctrination - Platforms - {typeName}</title>
             </MetaTags>
-            <Row className="mb-2">
-                <Col xs={2} lg={1} className="p-0 m-0">
+            <Row className="mb-2 mx-1">
+                <Col xs={3} lg={1} className="p-0 m-0">
                     <Link to={`/platforms`} className="text-white"><Button variant={"theme"} className="btn-block rounded-0 rounded-start">Back</Button></Link>
                 </Col>
-                <Col className="bg-theme rounded-0 py-3">
+                <Col className="bg-theme border-0 rounded-0 py-3">
                     <h3>{typeName}</h3>
                 </Col>
-                <Col className="bg-theme rounded-end py-3" xs={2} lg={1}/>
+                <Col className="bg-theme border-0 rounded-end py-3" xs={2} lg={1}/>
             </Row>
             <hr/>
             <Row>
