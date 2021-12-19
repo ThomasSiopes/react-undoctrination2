@@ -23,7 +23,6 @@ import TopicNavigation from "./pages/TopicNavigation";
 import Quote from "./pages/Quote";
 import Freethinkers from "./pages/Freethinkers";
 import SearchResult from "./pages/SearchResult";
-import Search from "./pages/Search";
 
 const httpLink = createHttpLink({
   uri: "/graphql",

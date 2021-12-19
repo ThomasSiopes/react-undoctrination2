@@ -44,9 +44,9 @@ function Quote () {
                             </Container>
                         </Card.Body>
                         <Card.Footer className="text-center pb-3 quote-footer">
-                            <Link className="mx-3 share-button" to={`https://twitter.com/intent/tweet?url=${window.location.href}`} id="share-twitter"><FaTwitter/></Link>
-                            <Link className="mx-3 share-button" to={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`} id="share-facebook"><FaFacebookF/></Link>
-                            <Link className="mx-3 share-button" to={``} id="share-reddit"><FaReddit/></Link>
+                            <a className="mx-3 share-button" href={`https://twitter.com/intent/tweet?url=${window.location.href}`} id="share-twitter"><FaTwitter/></a>
+                            <a className="mx-3 share-button" href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`} id="share-facebook"><FaFacebookF/></a>
+                            {/* <a className="mx-3 share-button" href="" id="share-reddit"><FaReddit/></a> */}
                         </Card.Footer>
                     </Card>
                 </Col>
