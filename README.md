@@ -1,4 +1,6 @@
 # To Do
-- Footer Description
+- Fix remaining colored photos
+- Add footer description
+- Share cards still don't work
 
-- Add last name sorting to Link Database
+- www.undoctrination.net works, but undoctrination.net doesn't?

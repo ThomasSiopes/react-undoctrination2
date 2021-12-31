@@ -33,8 +33,8 @@ function Quote () {
         <Container>
             <MetaTags>
                 <title>Undoctrination - {quote.author} - {quote.quoteText}</title>
-                <meta name="twitter:card" content="summary"/>
-                <meta name="twitter:site" content="Undoctrination"/>
+                <meta property="twitter:card" content="summary"/>
+                <meta property="twitter:site" content="Undoctrination"/>
                 <meta property="twitter:title" content="Undoctrination"/>
                 <meta property="og:type" content="website"/>
                 <meta property="og:url" content={`${window.location.href}`}/>
