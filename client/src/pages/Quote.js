@@ -33,13 +33,13 @@ function Quote () {
         <Container>
             <MetaTags>
                 <title>Undoctrination - {quote.author} - {quote.quoteText}</title>
-                <meta property="twitter:card" content="summary"/>
-                <meta property="twitter:site" content="Undoctrination"/>
-                <meta property="twitter:title" content="Undoctrination"/>
-                <meta property="og:type" content="website"/>
-                <meta property="og:url" content={`${window.location.href}`}/>
-                <meta property="og:description" content={quote.quoteText}/>
-                <meta property="og:image" content={`/assets/images/thumbnails/undoctrination_icon.png`}/>
+                <meta name="twitter:card" content="summary"/>
+                <meta name="twitter:site" content="Undoctrination"/>
+                <meta name="twitter:title" content="Undoctrination"/>
+                <meta name="og:type" content="website"/>
+                <meta name="og:url" content={`${window.location.href}`}/>
+                <meta name="og:description" content={quote.quoteText}/>
+                <meta name="og:image" content={`/assets/images/thumbnails/undoctrination_icon.png`}/>
             </MetaTags>
             <Row>
                 <Col xs={12} lg={9}>
