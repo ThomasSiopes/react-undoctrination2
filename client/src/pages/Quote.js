@@ -33,8 +33,7 @@ function Quote () {
         <Container>
             <MetaTags>
                 <title>Undoctrination - {quote.author} - {quote.quoteText}</title>
-                <meta name="og:url" content={`${window.location.href}`}/>
-                <meta name="description" content={quote.quoteText}/>
+                <meta property="og:description" content={quote.quoteText}/>
             </MetaTags>
             <Row>
                 <Col xs={12} lg={9}>
