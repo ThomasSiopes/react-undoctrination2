@@ -20,7 +20,7 @@ function compareQuotes(quote1, quote2) {
                 for(let index2 of words2) {
                     if(!(forbiddenWords.includes(index2.toLowerCase()))) {
                         if(index1.toLowerCase() === index2.toLowerCase()) {
-                            console.log("Shared Word: " + index1);
+                            // console.log("Shared Word: " + index1);
                             if(!(sharedWords.includes(index2.toLowerCase()))) sharedWords.push(index2.toLowerCase());
                         }
                     }
@@ -30,15 +30,15 @@ function compareQuotes(quote1, quote2) {
     }
 
     for(let index3 = 0; index3 < sharedWords.length; ++index3) {
-        console.log("Testing for " + sharedWords[index3])
+        // console.log("Testing for " + sharedWords[index3])
         if(forbiddenWords.includes(sharedWords[index3]) || forbiddenWords.includes(sharedWords[index3].toLowerCase())) {
             sharedWords.splice(index3, 1);
         }
     }
 
     if(sharedWords.length >= 1) {
-        console.log("Shared Words:");
-        console.log(sharedWords);
+        // console.log("Shared Words:");
+        // console.log(sharedWords);
     }
 
     return sharedWords.length;
@@ -72,7 +72,6 @@ const MoreQuotesBy = ({quote}) => {
         // currentQuote = quotePile[Math.floor(Math.random() * (quotePile.length-1))];
         // topicCheck = currentQuote.topics.filter(element => quote.topics.includes(element));
         // if((topicCheck !== "") && (currentQuote.quoteText !== quote.quoteText) && !(similarQuotes.includes(currentQuote))) similarQuotes.push(currentQuote);
-        console.log(similarQuotes.length);
         currentQuote = quotePile[i];
 
         if((currentQuote !== quote) && (currentQuote.author !== quote.author)) {

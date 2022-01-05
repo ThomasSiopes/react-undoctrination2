@@ -130,6 +130,18 @@ export const GlobalStyles = createGlobalStyle`
         font-size: 2rem;
     }
 
+    .mobile-share {
+        background-color: transparent;
+        border-color: transparent;
+        color: #eee;
+        font-size: 1.5rem;
+        transition: all 0.4s ease;
+    }
+
+    .mobile-share:hover {
+        color: #666;
+    }
+
     .navbar, .footer {
         width: 100%!important;
     }

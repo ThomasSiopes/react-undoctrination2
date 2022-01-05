@@ -4,7 +4,7 @@ import { useQuery} from "@apollo/client";
 import MetaTags from "react-meta-tags";
 
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
-import { FaTwitter, FaFacebookF, FaReddit } from "react-icons/fa";
+import { FaTwitter, FaFacebookF, FaReddit, FaShareSquare } from "react-icons/fa";
 
 // import TopicButton from "../components/TopicButton";
 import AuthorButton from "../components/AuthorButton";
@@ -29,6 +29,8 @@ function Quote () {
 
     const quote = data.quote;
 
+    let mobileShare = document.getElementById("mobileShare");
+
     return (
         <Container>
             <MetaTags>
@@ -47,7 +49,15 @@ function Quote () {
                         <Card.Footer className="text-center pb-3 quote-footer">
                             <a className="mx-3 share-button" href={`https://twitter.com/intent/tweet?url=${window.location.href}`} id="share-twitter"><FaTwitter/></a>
                             <a className="mx-3 share-button" href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`} id="share-facebook"><FaFacebookF/></a>
-                            {/* <a className="mx-3 share-button" href="" id="share-reddit"><FaReddit/></a> */}
+                            {navigator.share && 
+                                <button className="mobile-share mx-3" onClick={function(){
+                                    navigator.share({
+                                        title: "Undoctrination",
+                                        text: quote.quoteText,
+                                        url: window.location.href
+                                    })
+                                }}><FaShareSquare/></button>
+                            }
                         </Card.Footer>
                     </Card>
                 </Col>
