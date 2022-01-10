@@ -25,8 +25,6 @@ function Author () {
 
     const author = data.authorID;
 
-    console.log(author);
-
     let picPath = "/assets/images/portraits/" + author.thumbnail + ".png";
 
     return (        

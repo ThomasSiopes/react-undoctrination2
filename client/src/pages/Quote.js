@@ -1,10 +1,10 @@
 import React from "react";
-import { Link, Redirect, useParams } from "react-router-dom";
+import { Redirect, useParams } from "react-router-dom";
 import { useQuery} from "@apollo/client";
 import MetaTags from "react-meta-tags";
 
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
-import { FaTwitter, FaFacebookF, FaReddit, FaShareSquare } from "react-icons/fa";
+import { Container, Row, Col, Card } from "react-bootstrap";
+import { FaTwitter, FaFacebookF, FaShareSquare } from "react-icons/fa";
 
 // import TopicButton from "../components/TopicButton";
 import AuthorButton from "../components/AuthorButton";
@@ -29,8 +29,6 @@ function Quote () {
 
     const quote = data.quote;
 
-    let mobileShare = document.getElementById("mobileShare");
-
     return (
         <Container>
             <MetaTags>
@@ -50,13 +48,13 @@ function Quote () {
                             <a className="mx-3 share-button" href={`https://twitter.com/intent/tweet?url=${window.location.href}`} id="share-twitter"><FaTwitter/></a>
                             <a className="mx-3 share-button" href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`} id="share-facebook"><FaFacebookF/></a>
                             {navigator.share && 
-                                <button className="mobile-share mx-3" onClick={function(){
+                                <button className="mobile-share border-0 p-0 mx-3" onClick={function(){
                                     navigator.share({
                                         title: "Undoctrination",
                                         text: quote.quoteText,
                                         url: window.location.href
                                     })
-                                }}><FaShareSquare/></button>
+                                }}><FaShareSquare className="mb-1"/></button>
                             }
                         </Card.Footer>
                     </Card>
