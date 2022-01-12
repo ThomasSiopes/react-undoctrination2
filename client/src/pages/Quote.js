@@ -40,7 +40,7 @@ function Quote () {
                     <Card className="mb-3 rounded">
                         <Card.Body className="py-4 rounded quote-page">
                             <Container>
-                                <Card.Text className="display-6"><span className="quote-body" id="main-quote">"{quote.quoteText}"</span></Card.Text>
+                                <Card.Text className="display-6"><span className="quote-body" id="main-quote">{quote.quoteText}</span></Card.Text>
                                 <Card.Text className="d-xs-block d-lg-none"><strong><AuthorButton type={"link"} name={quote.author}/></strong></Card.Text>
                             </Container>
                         </Card.Body>
