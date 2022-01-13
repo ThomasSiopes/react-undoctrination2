@@ -84,7 +84,7 @@ function Author () {
                                     <Link to={`/quote/${index._id}`}><Button variant={"theme"} className="btn-block">
                                         <Container className="text-start">
                                             <Card.Body className="quote-preview">
-                                                "{index.quoteText}"
+                                                {index.quoteText}
                                             </Card.Body>
                                         </Container>
                                     </Button></Link>
