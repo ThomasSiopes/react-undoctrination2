@@ -13,8 +13,7 @@ const FooterPage = () => {
                         </Container>
                     </Col>
                     <Col xs={12} md={4} className="align-self-center mb-3">
-                        <p>Undoctrination is an app dedicated to documenting quotes from black conservatives and making their voices heard.</p>
-                        <span>Website Description. Maybe about us section? Copyright info? Anything relevant in text form.</span>
+                        <span>Undoctrination is an app dedicated to documenting quotes from black free thinkers and making their voices heard.</span>
                     </Col>
                     <Col xs={12} md={4}>
                         Site
