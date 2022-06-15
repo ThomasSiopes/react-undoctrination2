@@ -80,7 +80,7 @@ function Author () {
                         </Col>
                         {author.quotes.map((index) => (
                             <Col xs={12} className="mb-3" key={index.quoteText}>
-                                <Card className="bg-theme">
+                                <Card className="">
                                     <Link to={`/quote/${index._id}`}><Button variant={"weak"} className="btn-block">
                                         <Container className="text-start">
                                             <Card.Body className="quote-preview">
