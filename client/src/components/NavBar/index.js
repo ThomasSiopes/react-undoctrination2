@@ -28,12 +28,26 @@ class NavBar extends React.Component {
         }
         else {        
             return(
-            <Navbar variant={"dark"} className="mb-3 pb-0" expand="md">
+            <Navbar variant={"dark"} className="mb-3 pb-3" expand="md">
                 <Container>
                     <Nav>
                         <div className="text-center" id="banner">
-                            <Row>
-                                <Col xs={12} lg={6}>
+                            <Row className="align-items-end">
+                                <Col xs={12} md={4} className="px-1 pb-2"><Link to={`/`} title="Home" className="navIcon"><img src="/assets/images/thumbnails/undoctrinationShort.png" alt="Logo"/></Link></Col>
+                                <Col>
+                                    <Row>
+                                        <Col className="nav-link px-2"><Link to={`/freethinkers`}><Button variant={"theme"} className="btn-block border-white"><strong>Freethinkers</strong></Button></Link></Col>
+                                        <Col className="nav-link px-2"><Link to={`/platforms`}><Button variant={"theme"} className="btn-block border-white"><strong>Platforms</strong></Button></Link></Col>
+                                        <Col xs={12} md={4}>
+                                            <Form id="NavSearch" className="d-flex" onSubmit={this.handleSubmit}>
+                                                <Col className="pe-2"><input type="text" id="searchTerm" placeholder="Search..." className="my-2 rounded" onChange={this.handleChange}></input></Col>
+                                                <Col xs={2} lg={1} className="align-self-center text-white pb-1"><FaSearch type="submit" onClick={this.handleSubmit}/></Col>
+                                                {/* <Col xs={3} className="align-self-center d-xs-block d-md-none"><input className="btn btn-theme" type="submit" value="Search"/></Col> */}
+                                            </Form>
+                                        </Col>
+                                    </Row>
+                                </Col>
+                                {/* <Col xs={12} lg={6}>
                                     <Row>
                                         <Col xs={12} className="px-1"><Link to={`/`} title="Home" className="navIcon"><img src="/assets/images/thumbnails/undoctrinationShort.png" alt="Logo"/></Link></Col>
                                         <Col xs={12} md={4} className="d-xs-block d-md-none mt-2">
@@ -51,9 +65,8 @@ class NavBar extends React.Component {
                                     <Navbar.Collapse id="main-navbar" className="justify-content-center">
                                         <Container>
                                             <Row className="mb-2">
-                                                <Col xs={6} md={4} lg={6} className="nav-link px-2"><Link to={`/freethinkers`}><Button variant={"theme"} className="btn-block border-white"><strong>Freethinkers</strong></Button></Link></Col>
-                                                <Col xs={6} md={4} lg={6} className="nav-link px-2"><Link to={`/platforms`}><Button variant={"theme"} className="btn-block border-white"><strong>Platforms</strong></Button></Link></Col>
-                                                {/* <Col xs={12} md={4} lg={6} xl={4} className="nav-link px-2"><Link to={`/search`}><Button variant={"theme"} className="btn-block"><strong>Quotes</strong></Button></Link></Col> */}
+                                                <Col className="nav-link px-2"><Link to={`/freethinkers`}><Button variant={"theme"} className="btn-block border-white"><strong>Freethinkers</strong></Button></Link></Col>
+                                                <Col className="nav-link px-2"><Link to={`/platforms`}><Button variant={"theme"} className="btn-block border-white"><strong>Platforms</strong></Button></Link></Col>
                                                 <Col>
                                                     <Form id="NavSearch" className="d-flex" onSubmit={this.handleSubmit}>
                                                         <Col className="pe-2"><input type="text" id="searchTerm" placeholder="Search..." className="my-2 rounded" onChange={this.handleChange}></input></Col>
@@ -64,7 +77,7 @@ class NavBar extends React.Component {
                                             </Row>
                                         </Container>
                                     </Navbar.Collapse>
-                                </Col>
+                                </Col> */}
                             </Row>
                         </div>
                     </Nav>

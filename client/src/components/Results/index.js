@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
-import { Container, Card, Col, Row } from "react-bootstrap";
+import { Container, Col, Row } from "react-bootstrap";
 
 import { QUERY_AUTHOR_ALL } from '../../utils/queries';
 
