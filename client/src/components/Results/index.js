@@ -27,14 +27,8 @@ const Results = ({input}) => {
                     <hr></hr>
                     <Row className="text-center">
                         {newList.map((index) => (
-                            <Col xs={12} sm={6} md={4} className="mb-2" key={index.name}>
-                                <Card>
-                                    <Link to={`/author/${index._id}`} className="btn btn-theme">
-                                            <Card.Body>
-                                                {index.name}
-                                            </Card.Body>
-                                    </Link>
-                                </Card>
+                            <Col xs={12} sm={6} md={4} lg={3} className="mb-2" key={index.name}>
+                                <Link to={`/author/${index._id}`} className="">{index.name}</Link>
                             </Col>
                         ))}
                     </Row>

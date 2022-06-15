@@ -69,6 +69,13 @@ export const GlobalStyles = createGlobalStyle`
 
     }
 
+    .author-corner .btn-weak {
+        border-top-left-radius: 0rem;
+        border-top-right-radius: 0rem;
+        border-bottom-left-radius: .35rem;
+        border-bottom-right-radius: .35rem;
+    }
+
     #banner, #myInput, #NavSearch {
         width: 100%;
     }
@@ -81,6 +88,14 @@ export const GlobalStyles = createGlobalStyle`
         background-color: ${(props) => props.theme.lightColor};
     }
 
+    .border-black {
+        border: 1px solid #111;
+    }
+
+    .btn:focus {
+        box-shadow: none!important
+    }
+    
     .btn-block {
         display: block;
         width: 100%;
@@ -90,7 +105,7 @@ export const GlobalStyles = createGlobalStyle`
     .btn-theme {
         color: #fff;
         background-color: ${(props) => props.theme.button.main};
-        border: none;
+        //border: none;
     }
 
     .btn-theme:hover {
@@ -98,12 +113,25 @@ export const GlobalStyles = createGlobalStyle`
         background-color: ${(props) => props.theme.button.dark};
     }
 
+    .btn-weak {
+        color: #000;
+        background-color: #fff;
+        border: 1px solid #ccc;
+    }
+
+    .btn-weak a {
+        color: #000;
+    }
+
     .card {
-        border: none;
     }
 
     .card-footer .btn {
         border-color: #fff!important;
+    }
+
+    .card-img {
+        border-radius: 0px!important
     }
 
     .card-title {
@@ -163,7 +191,16 @@ export const GlobalStyles = createGlobalStyle`
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
-        background-color: ${(props) => props.theme.quote};
+    }
+
+    .rounded-bottom {
+        border-bottom-left-radius: .35rem!important;
+        border-bottom-right-radius: .35rem!important;
+    }
+
+    .rounded-top {
+        border-top-left-radius: .35rem!important;
+        border-top-right-radius: .35rem!important;
     }
 
     .smaller-text {

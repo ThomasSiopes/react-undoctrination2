@@ -17,13 +17,13 @@ const AuthorPortraitButton = ({name}) => {
     let picPath = "/assets/images/portraits/" + author.thumbnail + ".png";
 
     return (
-        <Card bg={"theme"} className="mb-3">
+        <Card bg={""} className="mb-3 author-corner">
             <Card.Header>Author</Card.Header>
             { author.thumbnail &&
                 <Card.Img src={picPath}/>
             }
-            <Button variant={"theme"}>
-                <Link to={`/author/${author._id}`} className="text-white">
+            <Button variant={"weak"}>
+                <Link to={`/author/${author._id}`} className="">
                     <Card.Body>
                         <Card.Title>{author.name}</Card.Title>
                     </Card.Body>

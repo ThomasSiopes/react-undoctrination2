@@ -40,11 +40,11 @@ function Quote () {
                     <Card className="mb-3 rounded">
                         <Card.Body className="py-4 rounded quote-page">
                             <Container>
-                                <Card.Text className="display-6"><span className="quote-body" id="main-quote">{quote.quoteText}</span></Card.Text>
+                                <Card.Text className="display-6"><span className="quote-body" id="main-quote">"{quote.quoteText}"</span></Card.Text>
                                 <Card.Text className="d-xs-block d-lg-none"><strong><AuthorButton type={"link"} name={quote.author}/></strong></Card.Text>
                             </Container>
                         </Card.Body>
-                        <Card.Footer className="text-center pb-3 quote-footer">
+                        <Card.Footer className="text-center pb-3">
                             <a className="mx-3 share-button" href={`https://twitter.com/intent/tweet?url=${window.location.href}`} id="share-twitter"><FaTwitter/></a>
                             <a className="mx-3 share-button" href={`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`} id="share-facebook"><FaFacebookF/></a>
                             {navigator.share && 
@@ -59,10 +59,10 @@ function Quote () {
                         </Card.Footer>
                     </Card>
                 </Col>
-                <Col lg={3} className="text-center text-white d-none d-lg-block">
+                <Col lg={3} className="text-center d-none d-lg-block">
                     <AuthorPortraitButton name={quote.author}/>
                 </Col>
-                <Col xs={12} className="text-center text-white">
+                <Col xs={12} className="text-center">
                     <MoreQuotesBy quote={quote}/>
                 </Col>
             </Row>

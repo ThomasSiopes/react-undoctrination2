@@ -28,24 +28,24 @@ function Author () {
     let picPath = "/assets/images/portraits/" + author.thumbnail + ".png";
 
     return (        
-        <Container className="text-white">
+        <Container className="">
             <MetaTags>
                 <title>Undoctrination - {author.name}</title>
             </MetaTags>
             <Row>
                 {/* Author Portrait Section */}
                 <Col xs={12} lg={3} className="order-1 order-lg-2 mb-3">
-                    <Card bg={"theme"}>
+                    <Card bg={""} className="rounded-top">
                         <Row className="align-items-center justify-content-center">
                             {author.thumbnail != null &&
                                 <Col xs={5} lg={12}>
-                                    <img className="card-img" src={picPath} alt="Portrait"/>
+                                    <img className="card-img rounded-top" src={picPath} alt="Portrait"/>
                                 </Col>
                             }
                             <Col xs={7} lg={12} className="text-center">
                                 <h5 className="card-title mt-3">{author.name}</h5>
                                 {author.description != null &&
-                                    <p className="card-text mx-2">{author.description}</p>
+                                    <p className="card-text mx-3">{author.description}</p>
                                 }
                             </Col>
                         </Row>
@@ -76,15 +76,15 @@ function Author () {
                 <Col xs={12} lg={9} className="order-2 order-lg-1">
                     <Row>
                         <Col xs={12}>
-                            <p className="bg-theme rounded py-2 text-center"><strong>{author.name}</strong> quotes</p>
+                            <p className="border-black rounded py-2 text-center"><strong>{author.name}</strong> quotes</p>
                         </Col>
                         {author.quotes.map((index) => (
                             <Col xs={12} className="mb-3" key={index.quoteText}>
                                 <Card className="bg-theme">
-                                    <Link to={`/quote/${index._id}`}><Button variant={"theme"} className="btn-block">
+                                    <Link to={`/quote/${index._id}`}><Button variant={"weak"} className="btn-block">
                                         <Container className="text-start">
                                             <Card.Body className="quote-preview">
-                                                {index.quoteText}
+                                                "{index.quoteText}"
                                             </Card.Body>
                                         </Container>
                                     </Button></Link>

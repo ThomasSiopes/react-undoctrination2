@@ -11,9 +11,9 @@ const SpecificCard = (author) => {
     
     return (
         <Col xs={6} md={4} lg={3} className="mb-3">
-            <Card className="text-center text-white bg-theme card-main">
-                <Link to={`/author/${author.author._id}`}><Card.Img src={picPath}/></Link>
-                <Link to={`/author/${author.author._id}`} className="text-white btn btn-theme btn-block py-3">
+            <Card className="text-center text-white bg-theme card-main author-corner">
+                <Link to={`/author/${author.author._id}`}><Card.Img className="rounded-top" src={picPath}/></Link>
+                <Link to={`/author/${author.author._id}`} className="btn btn-weak btn-block py-3">
                     <strong>{author.author.name}</strong>
                 </Link>
             </Card>

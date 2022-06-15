@@ -51,8 +51,8 @@ class NavBar extends React.Component {
                                     <Navbar.Collapse id="main-navbar" className="justify-content-center">
                                         <Container>
                                             <Row className="mb-2">
-                                                <Col xs={6} md={4} lg={6} className="nav-link px-2"><Link to={`/freethinkers`}><Button variant={"theme"} className="btn-block"><strong>Freethinkers</strong></Button></Link></Col>
-                                                <Col xs={6} md={4} lg={6} className="nav-link px-2"><Link to={`/platforms`}><Button variant={"theme"} className="btn-block"><strong>Platforms</strong></Button></Link></Col>
+                                                <Col xs={6} md={4} lg={6} className="nav-link px-2"><Link to={`/freethinkers`}><Button variant={"theme"} className="btn-block border-white"><strong>Freethinkers</strong></Button></Link></Col>
+                                                <Col xs={6} md={4} lg={6} className="nav-link px-2"><Link to={`/platforms`}><Button variant={"theme"} className="btn-block border-white"><strong>Platforms</strong></Button></Link></Col>
                                                 {/* <Col xs={12} md={4} lg={6} xl={4} className="nav-link px-2"><Link to={`/search`}><Button variant={"theme"} className="btn-block"><strong>Quotes</strong></Button></Link></Col> */}
                                                 <Col>
                                                     <Form id="NavSearch" className="d-flex" onSubmit={this.handleSubmit}>

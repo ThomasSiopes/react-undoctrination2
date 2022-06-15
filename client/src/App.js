@@ -59,7 +59,7 @@ const findTheme = (theme) => {
 }
 
 function App() {
-  const [theme] = useState("gunmetal");
+  const [theme] = useState("redbrain");
 
   return (
     <ApolloProvider client={client}>

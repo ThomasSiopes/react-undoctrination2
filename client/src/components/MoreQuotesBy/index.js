@@ -86,12 +86,12 @@ const MoreQuotesBy = ({quote}) => {
     if(similarQuotes.length <= 0) return null;
 
     return (
-        <Card bg={"theme"}>
+        <Card bg={""}>
             <Card.Header>Similar Quotes</Card.Header>
             <Card.Body>
                 {similarQuotes.map((index) => (
                     <Link to={`/quote/${index._id}`} key={index.quoteText}>
-                        <Button variant={"theme"} className="mb-3 py-2 btn-block"><i>{index.quoteText}</i> - {index.author}</Button>
+                        <Button variant={"weak"} className="mb-3 py-2 btn-block"><i>"{index.quoteText}"</i> - {index.author}</Button>
                     </Link>
                 ))}
             </Card.Body>

@@ -52,15 +52,7 @@ function Freethinkers () {
             <Row id="myGroup">
                 {authorList.map((index) => (
                     <Col xs={12} sm={6} md={4} key={index.name} className="text-center mb-3">
-                        <Link to={`/author/${index._id}`}>
-                            <Card bg={"theme"}>
-                                <Button variant={"theme"} className="block">
-                                    <Card.Body>
-                                        {index.name}
-                                    </Card.Body>
-                                </Button>
-                            </Card>
-                        </Link>
+                        <Link to={`/author/${index._id}`}>{index.name}</Link>
                     </Col>
                 ))}
             </Row>

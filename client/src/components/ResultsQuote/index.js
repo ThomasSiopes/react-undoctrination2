@@ -33,10 +33,10 @@ const ResultsQuote = ({input}) => {
                         {newList.map((index) => (
                             <Col xs={12} sm={6} md={4} className="mb-3" key={index.name + index.quoteText}>
                                 <Card>
-                                    <Link to={`/quote/${index._id}`} className="text-black quote-page">
+                                    <Link to={`/quote/${index._id}`} className="text-black">
                                         <Card.Body><i>"{index.quoteText}"</i></Card.Body>
                                     </Link>
-                                    <Card.Footer className="quote-footer text-center">
+                                    <Card.Footer className="text-center">
                                         <AuthorButton key={index.author} type={"button"} name={index.author}/>
                                     </Card.Footer>
                                 </Card>
